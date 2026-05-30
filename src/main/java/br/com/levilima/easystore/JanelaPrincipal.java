@@ -28,9 +28,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btnClientes = new javax.swing.JButton();
         btnRelatorios = new javax.swing.JButton();
         conteudoPrincipal = new javax.swing.JPanel();
-        containerMsgBoasVindas = new javax.swing.JPanel();
-        msgBoasVindas = new javax.swing.JLabel();
-        containerTabelas = new javax.swing.JPanel();
+        msgBoasVindas = new javax.swing.JPanel();
+        lblBoasVindas = new javax.swing.JLabel();
+        produtos = new javax.swing.JPanel();
         scrollPane = new javax.swing.JScrollPane();
         tabelaProdutos = new javax.swing.JTable();
 
@@ -45,6 +45,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         lblEasyStore.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         btnProdutos.setText("Produtos");
+        btnProdutos.addActionListener(this::btnProdutosActionPerformed);
 
         btnEstoque.setText("Estoque");
 
@@ -80,27 +81,27 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         conteudoPrincipal.setLayout(new java.awt.CardLayout());
 
-        msgBoasVindas.setFont(new java.awt.Font("Liberation Sans", 0, 16)); // NOI18N
-        msgBoasVindas.setText("Bem-vindo ao sistema da EasyStore!");
+        lblBoasVindas.setFont(new java.awt.Font("Liberation Sans", 0, 16)); // NOI18N
+        lblBoasVindas.setText("Bem-vindo ao sistema da EasyStore!");
 
-        javax.swing.GroupLayout containerMsgBoasVindasLayout = new javax.swing.GroupLayout(containerMsgBoasVindas);
-        containerMsgBoasVindas.setLayout(containerMsgBoasVindasLayout);
-        containerMsgBoasVindasLayout.setHorizontalGroup(
-            containerMsgBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(containerMsgBoasVindasLayout.createSequentialGroup()
+        javax.swing.GroupLayout msgBoasVindasLayout = new javax.swing.GroupLayout(msgBoasVindas);
+        msgBoasVindas.setLayout(msgBoasVindasLayout);
+        msgBoasVindasLayout.setHorizontalGroup(
+            msgBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(msgBoasVindasLayout.createSequentialGroup()
                 .addGap(143, 143, 143)
-                .addComponent(msgBoasVindas)
+                .addComponent(lblBoasVindas)
                 .addContainerGap(203, Short.MAX_VALUE))
         );
-        containerMsgBoasVindasLayout.setVerticalGroup(
-            containerMsgBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(containerMsgBoasVindasLayout.createSequentialGroup()
+        msgBoasVindasLayout.setVerticalGroup(
+            msgBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(msgBoasVindasLayout.createSequentialGroup()
                 .addGap(87, 87, 87)
-                .addComponent(msgBoasVindas)
+                .addComponent(lblBoasVindas)
                 .addContainerGap(135, Short.MAX_VALUE))
         );
 
-        conteudoPrincipal.add(containerMsgBoasVindas, "card2");
+        conteudoPrincipal.add(msgBoasVindas, "msgBoasVindas");
 
         tabelaProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -128,20 +129,20 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         tabelaProdutos.getTableHeader().setReorderingAllowed(false);
         scrollPane.setViewportView(tabelaProdutos);
 
-        javax.swing.GroupLayout containerTabelasLayout = new javax.swing.GroupLayout(containerTabelas);
-        containerTabelas.setLayout(containerTabelasLayout);
-        containerTabelasLayout.setHorizontalGroup(
-            containerTabelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout produtosLayout = new javax.swing.GroupLayout(produtos);
+        produtos.setLayout(produtosLayout);
+        produtosLayout.setHorizontalGroup(
+            produtosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
         );
-        containerTabelasLayout.setVerticalGroup(
-            containerTabelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerTabelasLayout.createSequentialGroup()
+        produtosLayout.setVerticalGroup(
+            produtosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, produtosLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE))
         );
 
-        conteudoPrincipal.add(containerTabelas, "card3");
+        conteudoPrincipal.add(produtos, "produtos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -173,6 +174,12 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
+        java.awt.CardLayout cardLayout = (java.awt.CardLayout) conteudoPrincipal.getLayout();
+        
+        cardLayout.show(conteudoPrincipal, "produtos");
+    }//GEN-LAST:event_btnProdutosActionPerformed
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -194,12 +201,12 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnProdutos;
     private javax.swing.JButton btnRelatorios;
     private javax.swing.JButton btnVendas;
-    private javax.swing.JPanel containerMsgBoasVindas;
-    private javax.swing.JPanel containerTabelas;
     private javax.swing.JPanel conteudoPrincipal;
+    private javax.swing.JLabel lblBoasVindas;
     private javax.swing.JLabel lblEasyStore;
     private javax.swing.JPanel menuLateral;
-    private javax.swing.JLabel msgBoasVindas;
+    private javax.swing.JPanel msgBoasVindas;
+    private javax.swing.JPanel produtos;
     private javax.swing.JScrollPane scrollPane;
     private javax.swing.JTable tabelaProdutos;
     // End of variables declaration//GEN-END:variables
