@@ -6,9 +6,10 @@ package br.com.levilima.easystore;
  */
 public class Produto {
     private int codigo = 1, quantidade;
+    double preco;
     private String nome, descricao, categoria, validade;
     
-    public Produto(String nome, String descricao, String categoria, int quantidade, String validade) {
+    public Produto(String nome, String descricao, String categoria, int quantidade, String validade, double preco) {
         this.setNome(nome);
         this.setDescricao(descricao);
         this.setCategoria(categoria);
@@ -62,5 +63,19 @@ public class Produto {
 
     public void setValidade(String validade) {
         this.validade = validade;
+    }
+    
+    public double getPreco() {
+        return this.preco;
+    }
+    
+    public void setPreco(double preco) {
+        if(preco > 0) this.preco = preco;
+    }
+    
+    public String exibirProduto() {
+        String conteudo = "Código: " + this.codigo + " Nome: " + this.nome + " Descrição: " + this.descricao + " Categoria: " + this.categoria + " Validade: " + this.validade + " Preço: " + this.preco;
+    
+        return conteudo;
     }
 }
