@@ -21,6 +21,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         lblEasyStore = new javax.swing.JLabel();
+        menuSuperior = new javax.swing.JPanel();
         menuLateral = new javax.swing.JPanel();
         btnProdutos = new javax.swing.JButton();
         btnEstoque = new javax.swing.JButton();
@@ -45,6 +46,17 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         lblEasyStore.setForeground(new java.awt.Color(0, 51, 255));
         lblEasyStore.setText("EasyStore");
         lblEasyStore.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        javax.swing.GroupLayout menuSuperiorLayout = new javax.swing.GroupLayout(menuSuperior);
+        menuSuperior.setLayout(menuSuperiorLayout);
+        menuSuperiorLayout.setHorizontalGroup(
+            menuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        menuSuperiorLayout.setVerticalGroup(
+            menuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         btnProdutos.setText("Produtos");
         btnProdutos.addActionListener(this::btnProdutosActionPerformed);
@@ -129,7 +141,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         produtos.setLayout(produtosLayout);
         produtosLayout.setHorizontalGroup(
             produtosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
+            .addComponent(scrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
         );
         produtosLayout.setVerticalGroup(
             produtosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,15 +162,19 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                     .addComponent(lblEasyStore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(menuLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(conteudoPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(conteudoPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblEasyStore)
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblEasyStore, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(menuSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(conteudoPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(menuLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -204,6 +220,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblBoasVindas;
     private javax.swing.JLabel lblEasyStore;
     private javax.swing.JPanel menuLateral;
+    private javax.swing.JPanel menuSuperior;
     private javax.swing.JPanel msgBoasVindas;
     private javax.swing.JPanel produtos;
     private javax.swing.JScrollPane scrollPane;
