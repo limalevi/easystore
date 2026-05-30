@@ -36,8 +36,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EasyStore");
-        setMinimumSize(new java.awt.Dimension(762, 340));
+        setMinimumSize(new java.awt.Dimension(1000, 340));
         setName("frame"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(1000, 300));
 
         lblEasyStore.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         lblEasyStore.setForeground(new java.awt.Color(0, 51, 255));
@@ -81,25 +82,12 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         conteudoPrincipal.setLayout(new java.awt.CardLayout());
 
-        lblBoasVindas.setFont(new java.awt.Font("Liberation Sans", 0, 16)); // NOI18N
-        lblBoasVindas.setText("Bem-vindo ao sistema da EasyStore!");
+        msgBoasVindas.setLayout(new java.awt.GridBagLayout());
 
-        javax.swing.GroupLayout msgBoasVindasLayout = new javax.swing.GroupLayout(msgBoasVindas);
-        msgBoasVindas.setLayout(msgBoasVindasLayout);
-        msgBoasVindasLayout.setHorizontalGroup(
-            msgBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(msgBoasVindasLayout.createSequentialGroup()
-                .addGap(143, 143, 143)
-                .addComponent(lblBoasVindas)
-                .addContainerGap(203, Short.MAX_VALUE))
-        );
-        msgBoasVindasLayout.setVerticalGroup(
-            msgBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(msgBoasVindasLayout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addComponent(lblBoasVindas)
-                .addContainerGap(135, Short.MAX_VALUE))
-        );
+        lblBoasVindas.setFont(new java.awt.Font("Liberation Sans", 0, 48)); // NOI18N
+        lblBoasVindas.setForeground(new java.awt.Color(204, 204, 204));
+        lblBoasVindas.setText("EasyStore");
+        msgBoasVindas.add(lblBoasVindas, new java.awt.GridBagConstraints());
 
         conteudoPrincipal.add(msgBoasVindas, "msgBoasVindas");
 
@@ -108,14 +96,14 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código", "Nome", "Descrição", "Categoria", "Preço"
+                "Código", "Produto", "Descrição", "Categoria", "Quantidade", "Preço", "Validade"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -133,7 +121,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         produtos.setLayout(produtosLayout);
         produtosLayout.setHorizontalGroup(
             produtosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
+            .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
         );
         produtosLayout.setVerticalGroup(
             produtosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
