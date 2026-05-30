@@ -31,6 +31,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         containerMsgBoasVindas = new javax.swing.JPanel();
         msgBoasVindas = new javax.swing.JLabel();
         containerTabelas = new javax.swing.JPanel();
+        scrollPane = new javax.swing.JScrollPane();
+        tabelaProdutos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EasyStore");
@@ -100,15 +102,43 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         conteudoPrincipal.add(containerMsgBoasVindas, "card2");
 
+        tabelaProdutos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Código", "Nome", "Descrição", "Categoria", "Preço"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaProdutos.getTableHeader().setReorderingAllowed(false);
+        scrollPane.setViewportView(tabelaProdutos);
+
         javax.swing.GroupLayout containerTabelasLayout = new javax.swing.GroupLayout(containerTabelas);
         containerTabelas.setLayout(containerTabelasLayout);
         containerTabelasLayout.setHorizontalGroup(
             containerTabelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 623, Short.MAX_VALUE)
+            .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
         );
         containerTabelasLayout.setVerticalGroup(
             containerTabelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 241, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerTabelasLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE))
         );
 
         conteudoPrincipal.add(containerTabelas, "card3");
@@ -135,8 +165,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(menuLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(conteudoPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(conteudoPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(1, 1, 1)))
                 .addContainerGap())
         );
 
@@ -170,5 +200,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblEasyStore;
     private javax.swing.JPanel menuLateral;
     private javax.swing.JLabel msgBoasVindas;
+    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JTable tabelaProdutos;
     // End of variables declaration//GEN-END:variables
 }
