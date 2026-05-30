@@ -16,6 +16,8 @@ public class Produto {
         this.setQuantidade(quantidade);
         this.setValidade(validade);
         this.setPreco(preco);
+        this.setCodigo(Loja.CODIGO);
+        ++Loja.CODIGO;
     }
 
     public int getCodigo() {
