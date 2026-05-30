@@ -15,6 +15,7 @@ public class Produto {
         this.setCategoria(categoria);
         this.setQuantidade(quantidade);
         this.setValidade(validade);
+        this.setPreco(preco);
     }
 
     public int getCodigo() {
