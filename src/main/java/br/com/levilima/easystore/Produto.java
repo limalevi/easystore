@@ -7,6 +7,14 @@ package br.com.levilima.easystore;
 public class Produto {
     private int codigo = 1, quantidade;
     private String nome, descricao, categoria, validade;
+    
+    public Produto(String nome, String descricao, String categoria, int quantidade, String validade) {
+        this.setNome(nome);
+        this.setDescricao(descricao);
+        this.setCategoria(categoria);
+        this.setQuantidade(quantidade);
+        this.setValidade(validade);
+    }
 
     public int getCodigo() {
         return this.codigo;
