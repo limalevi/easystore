@@ -29,6 +29,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btnRelatorios = new javax.swing.JButton();
         conteudoPrincipal = new javax.swing.JPanel();
         containerMsgBoasVindas = new javax.swing.JPanel();
+        msgBoasVindas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EasyStore");
@@ -76,15 +77,24 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         conteudoPrincipal.setLayout(new java.awt.CardLayout());
 
+        msgBoasVindas.setFont(new java.awt.Font("Liberation Sans", 0, 16)); // NOI18N
+        msgBoasVindas.setText("Bem-vindo ao sistema da EasyStore!");
+
         javax.swing.GroupLayout containerMsgBoasVindasLayout = new javax.swing.GroupLayout(containerMsgBoasVindas);
         containerMsgBoasVindas.setLayout(containerMsgBoasVindasLayout);
         containerMsgBoasVindasLayout.setHorizontalGroup(
             containerMsgBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 623, Short.MAX_VALUE)
+            .addGroup(containerMsgBoasVindasLayout.createSequentialGroup()
+                .addGap(143, 143, 143)
+                .addComponent(msgBoasVindas)
+                .addContainerGap(203, Short.MAX_VALUE))
         );
         containerMsgBoasVindasLayout.setVerticalGroup(
             containerMsgBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 241, Short.MAX_VALUE)
+            .addGroup(containerMsgBoasVindasLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(msgBoasVindas)
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         conteudoPrincipal.add(containerMsgBoasVindas, "card2");
@@ -99,7 +109,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                     .addComponent(lblEasyStore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(menuLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(conteudoPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
+                .addComponent(conteudoPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -144,5 +154,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel conteudoPrincipal;
     private javax.swing.JLabel lblEasyStore;
     private javax.swing.JPanel menuLateral;
+    private javax.swing.JLabel msgBoasVindas;
     // End of variables declaration//GEN-END:variables
 }
