@@ -28,6 +28,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btnClientes = new javax.swing.JButton();
         btnRelatorios = new javax.swing.JButton();
         conteudoPrincipal = new javax.swing.JPanel();
+        containerMsgBoasVindas = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EasyStore");
@@ -74,6 +75,19 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         );
 
         conteudoPrincipal.setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout containerMsgBoasVindasLayout = new javax.swing.GroupLayout(containerMsgBoasVindas);
+        containerMsgBoasVindas.setLayout(containerMsgBoasVindasLayout);
+        containerMsgBoasVindasLayout.setHorizontalGroup(
+            containerMsgBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 623, Short.MAX_VALUE)
+        );
+        containerMsgBoasVindasLayout.setVerticalGroup(
+            containerMsgBoasVindasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 241, Short.MAX_VALUE)
+        );
+
+        conteudoPrincipal.add(containerMsgBoasVindas, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,6 +140,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnProdutos;
     private javax.swing.JButton btnRelatorios;
     private javax.swing.JButton btnVendas;
+    private javax.swing.JPanel containerMsgBoasVindas;
     private javax.swing.JPanel conteudoPrincipal;
     private javax.swing.JLabel lblEasyStore;
     private javax.swing.JPanel menuLateral;
