@@ -38,8 +38,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EasyStore");
-        setMinimumSize(new java.awt.Dimension(1000, 385));
+        setMinimumSize(new java.awt.Dimension(1000, 560));
         setName("frame"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(1000, 560));
 
         lblEasyStore.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         lblEasyStore.setForeground(new java.awt.Color(0, 51, 255));
@@ -147,7 +148,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             produtosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, produtosLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE))
+                .addComponent(scrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE))
         );
 
         conteudoPrincipal.add(produtos, "produtos");
@@ -177,7 +178,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(conteudoPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                        .addComponent(conteudoPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
                         .addGap(7, 7, 7))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(menuLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
