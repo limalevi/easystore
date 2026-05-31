@@ -12,10 +12,16 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JanelaAdicaoProduto.class.getName());
 
+    private final Loja loja;
+    private final JanelaPrincipal janelaPrincipal;
+    
     /**
      * Creates new form JanelaAdicaoProduto
      */
-    public JanelaAdicaoProduto() {
+    public JanelaAdicaoProduto(Loja loja, JanelaPrincipal janelaPrincipal) {
+        this.loja = loja;
+        this.janelaPrincipal = janelaPrincipal;
+        
         initComponents();
     }
 
@@ -124,6 +130,7 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
         btnCancelar.addActionListener(this::btnCancelarActionPerformed);
 
         btnAdicionar.setText("Adicionar");
+        btnAdicionar.addActionListener(this::btnAdicionarActionPerformed);
 
         javax.swing.GroupLayout botoesLayout = new javax.swing.GroupLayout(botoes);
         botoes.setLayout(botoesLayout);
@@ -176,6 +183,20 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+        String nome = txtNome.getText();
+        String descricao = txtDescricao.getText();
+        String categoria = txtCategoria.getText();
+        String vencimento = txtVencimento.getText();
+        int quantidade = Integer.parseInt(txtQuantidade.getText());
+        double preco = Double.parseDouble(txtPreco.getText());
+        Produto produto = new Produto(nome, descricao, categoria, quantidade, vencimento, preco);
+        
+        loja.addProduto(produto);
+        janelaPrincipal.atualizarTabela();
+        this.dispose();
+    }//GEN-LAST:event_btnAdicionarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel botoes;

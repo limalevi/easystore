@@ -14,4 +14,8 @@ public class Loja {
     public void addProduto(Produto produto) {
         produtos.add(produto);
     }
+    
+    public ArrayList<Produto> getProduto() {
+        return this.produtos;
+    }
 }

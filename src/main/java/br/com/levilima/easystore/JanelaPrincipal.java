@@ -12,8 +12,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JanelaPrincipal.class.getName());
 
+    private Loja loja = new Loja();
+    
     public JanelaPrincipal() {
         initComponents();
+        atualizarTabela();
     }
 
     @SuppressWarnings("unchecked")
@@ -201,7 +204,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnAdicionarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarProdutoActionPerformed
-        new JanelaAdicaoProduto().setVisible(true);
+        new JanelaAdicaoProduto(loja, this).setVisible(true);
     }//GEN-LAST:event_btnAdicionarProdutoActionPerformed
 
     public static void main(String args[]) {
@@ -217,6 +220,24 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         }
         
         java.awt.EventQueue.invokeLater(() -> new JanelaPrincipal().setVisible(true));
+    }
+    
+    public void atualizarTabela() {
+        javax.swing.table.DefaultTableModel tabela = (javax.swing.table.DefaultTableModel) tabelaProdutos.getModel();
+        
+        tabela.setRowCount(0);
+        
+        for(Produto produto : loja.getProduto()) {
+            tabela.addRow(new Object[]{
+                produto.getCodigo(),
+                produto.getNome(),
+                produto.getDescricao(),
+                produto.getCategoria(),
+                produto.getValidade(),
+                produto.getQuantidade(),
+                produto.getPreco()
+            });
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
