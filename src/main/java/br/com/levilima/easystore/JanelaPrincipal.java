@@ -22,7 +22,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         lblEasyStore = new javax.swing.JLabel();
         menuSuperior = new javax.swing.JPanel();
-        btnAddProduto = new javax.swing.JButton();
         menuLateral = new javax.swing.JPanel();
         btnProdutos = new javax.swing.JButton();
         btnEstoque = new javax.swing.JButton();
@@ -48,19 +47,15 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         lblEasyStore.setText("EasyStore");
         lblEasyStore.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        btnAddProduto.setText("Adicionar um produto");
-
         javax.swing.GroupLayout menuSuperiorLayout = new javax.swing.GroupLayout(menuSuperior);
         menuSuperior.setLayout(menuSuperiorLayout);
         menuSuperiorLayout.setHorizontalGroup(
             menuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuSuperiorLayout.createSequentialGroup()
-                .addComponent(btnAddProduto)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         menuSuperiorLayout.setVerticalGroup(
             menuSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnAddProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         btnProdutos.setText("Produtos");
@@ -215,7 +210,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddProduto;
     private javax.swing.JButton btnClientes;
     private javax.swing.JButton btnEstoque;
     private javax.swing.JButton btnProdutos;
