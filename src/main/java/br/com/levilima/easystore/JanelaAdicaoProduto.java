@@ -48,6 +48,7 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Adicione um produto");
+        setBounds(new java.awt.Rectangle(300, 180, 0, 0));
         setResizable(false);
 
         dica.setText("Campos de preenchimento obrigatório (*)");
