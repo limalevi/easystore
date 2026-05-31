@@ -121,6 +121,7 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
 
         btnCancelar.setBackground(new java.awt.Color(255, 0, 0));
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(this::btnCancelarActionPerformed);
 
         btnAdicionar.setText("Adicionar");
 
@@ -171,6 +172,10 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel botoes;
