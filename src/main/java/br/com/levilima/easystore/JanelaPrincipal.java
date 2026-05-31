@@ -38,6 +38,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EasyStore");
+        setBounds(new java.awt.Rectangle(180, 50, 0, 0));
         setMinimumSize(new java.awt.Dimension(1000, 560));
         setName("frame"); // NOI18N
         setPreferredSize(new java.awt.Dimension(1000, 560));
