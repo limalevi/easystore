@@ -48,6 +48,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         lblEasyStore.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         btnAdicionarProduto.setText("Adicionar Produto");
+        btnAdicionarProduto.addActionListener(this::btnAdicionarProdutoActionPerformed);
 
         javax.swing.GroupLayout menuSuperiorLayout = new javax.swing.GroupLayout(menuSuperior);
         menuSuperior.setLayout(menuSuperiorLayout);
@@ -197,6 +198,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnAdicionarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarProdutoActionPerformed
+        new JanelaAdicaoProduto().setVisible(true);
+    }//GEN-LAST:event_btnAdicionarProdutoActionPerformed
 
     public static void main(String args[]) {
         try {
