@@ -8,6 +8,8 @@ package br.com.levilima.easystore;
  *
  * @author levi
  */
+import javax.swing.JOptionPane;
+
 public class JanelaAdicaoProduto extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JanelaAdicaoProduto.class.getName());
@@ -189,8 +191,33 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
         String descricao = txtDescricao.getText();
         String categoria = txtCategoria.getText();
         String vencimento = txtVencimento.getText();
-        int quantidade = Integer.parseInt(txtQuantidade.getText());
-        double preco = Double.parseDouble(txtPreco.getText());
+        int quantidade = 0;
+        double preco = 0;
+        
+        if(nome.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Insira um nome para o produto.");
+            return;
+        }
+        
+        if(vencimento.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Insira uma data de validade para o produto.");
+            return;
+        }
+        
+        try {
+            quantidade = Integer.parseInt(txtQuantidade.getText());
+        } catch(NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Insira uma quantidade válida.");
+            return;
+        }
+
+        try {
+            preco = Double.parseDouble(txtPreco.getText());
+        } catch(NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Insira um preço válido.");
+            return;
+        }
+        
         Produto produto = new Produto(nome, descricao, categoria, quantidade, vencimento, preco);
         
         loja.addProduto(produto);
