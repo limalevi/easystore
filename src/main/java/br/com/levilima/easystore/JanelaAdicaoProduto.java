@@ -8,7 +8,17 @@ package br.com.levilima.easystore;
  *
  * @author levi
  */
+import java.awt.Color;
+import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle;
+import javax.swing.WindowConstants;
 
 public class JanelaAdicaoProduto extends javax.swing.JFrame {
     
@@ -36,27 +46,27 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dica = new javax.swing.JLabel();
-        container = new javax.swing.JPanel();
-        lblNome = new javax.swing.JLabel();
-        txtNome = new javax.swing.JTextField();
-        lblDescricao = new javax.swing.JLabel();
-        txtDescricao = new javax.swing.JTextField();
-        lblCategoria = new javax.swing.JLabel();
-        txtCategoria = new javax.swing.JTextField();
-        lblVencimento = new javax.swing.JLabel();
-        txtVencimento = new javax.swing.JTextField();
-        lblQuantidade = new javax.swing.JLabel();
-        txtQuantidade = new javax.swing.JTextField();
-        lblPreco = new javax.swing.JLabel();
-        txtPreco = new javax.swing.JTextField();
-        botoes = new javax.swing.JPanel();
-        btnCancelar = new javax.swing.JButton();
-        btnAdicionar = new javax.swing.JButton();
+        dica = new JLabel();
+        container = new JPanel();
+        lblNome = new JLabel();
+        txtNome = new JTextField();
+        lblDescricao = new JLabel();
+        txtDescricao = new JTextField();
+        lblCategoria = new JLabel();
+        txtCategoria = new JTextField();
+        lblVencimento = new JLabel();
+        txtVencimento = new JTextField();
+        lblQuantidade = new JLabel();
+        txtQuantidade = new JTextField();
+        lblPreco = new JLabel();
+        txtPreco = new JTextField();
+        botoes = new JPanel();
+        btnCancelar = new JButton();
+        btnAdicionar = new JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Adicione um produto");
-        setBounds(new java.awt.Rectangle(300, 180, 0, 0));
+        setBounds(new Rectangle(300, 180, 0, 0));
         setResizable(false);
 
         dica.setText("Campos de preenchimento obrigatório (*)");
@@ -73,120 +83,114 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
 
         lblPreco.setText("Preço*");
 
-        javax.swing.GroupLayout containerLayout = new javax.swing.GroupLayout(container);
+        GroupLayout containerLayout = new GroupLayout(container);
         container.setLayout(containerLayout);
-        containerLayout.setHorizontalGroup(
-            containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerLayout.createSequentialGroup()
+        containerLayout.setHorizontalGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(GroupLayout.Alignment.TRAILING, containerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblVencimento, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
-                    .addComponent(lblCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblQuantidade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblPreco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDescricao, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtCategoria, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(lblVencimento, GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                    .addComponent(lblCategoria, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblDescricao, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblNome, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblQuantidade, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblPreco, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(txtDescricao, GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtCategoria, GroupLayout.Alignment.TRAILING)
                     .addComponent(txtVencimento)
                     .addComponent(txtNome)
                     .addComponent(txtPreco)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerLayout.createSequentialGroup()
+                    .addGroup(GroupLayout.Alignment.TRAILING, containerLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtQuantidade, GroupLayout.PREFERRED_SIZE, 513, GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-        containerLayout.setVerticalGroup(
-            containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        containerLayout.setVerticalGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(containerLayout.createSequentialGroup()
-                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(lblNome)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(lblDescricao)
-                    .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtDescricao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(lblCategoria)
-                    .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCategoria, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(lblVencimento)
-                    .addComponent(txtVencimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtVencimento, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(lblQuantidade)
-                    .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtQuantidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(lblPreco)
-                    .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtPreco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnCancelar.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelar.setBackground(new Color(255, 0, 0));
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(this::btnCancelarActionPerformed);
 
         btnAdicionar.setText("Adicionar");
         btnAdicionar.addActionListener(this::btnAdicionarActionPerformed);
 
-        javax.swing.GroupLayout botoesLayout = new javax.swing.GroupLayout(botoes);
+        GroupLayout botoesLayout = new GroupLayout(botoes);
         botoes.setLayout(botoesLayout);
-        botoesLayout.setHorizontalGroup(
-            botoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        botoesLayout.setHorizontalGroup(botoesLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(botoesLayout.createSequentialGroup()
-                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnCancelar, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAdicionar, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE))
         );
-        botoesLayout.setVerticalGroup(
-            botoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        botoesLayout.setVerticalGroup(botoesLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(botoesLayout.createSequentialGroup()
-                .addGroup(botoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(botoesLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelar, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdicionar, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(container, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addComponent(container, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(179, 179, 179)
                         .addComponent(dica))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(164, 164, 164)
-                        .addComponent(botoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(botoes, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(dica)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(container, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(container, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botoes, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    private void btnCancelarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+    private void btnAdicionarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
         String nome = txtNome.getText();
         String descricao = txtDescricao.getText();
         String categoria = txtCategoria.getText();
@@ -226,22 +230,22 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel botoes;
-    private javax.swing.JButton btnAdicionar;
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JPanel container;
-    private javax.swing.JLabel dica;
-    private javax.swing.JLabel lblCategoria;
-    private javax.swing.JLabel lblDescricao;
-    private javax.swing.JLabel lblNome;
-    private javax.swing.JLabel lblPreco;
-    private javax.swing.JLabel lblQuantidade;
-    private javax.swing.JLabel lblVencimento;
-    private javax.swing.JTextField txtCategoria;
-    private javax.swing.JTextField txtDescricao;
-    private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtPreco;
-    private javax.swing.JTextField txtQuantidade;
-    private javax.swing.JTextField txtVencimento;
+    private JPanel botoes;
+    private JButton btnAdicionar;
+    private JButton btnCancelar;
+    private JPanel container;
+    private JLabel dica;
+    private JLabel lblCategoria;
+    private JLabel lblDescricao;
+    private JLabel lblNome;
+    private JLabel lblPreco;
+    private JLabel lblQuantidade;
+    private JLabel lblVencimento;
+    private JTextField txtCategoria;
+    private JTextField txtDescricao;
+    private JTextField txtNome;
+    private JTextField txtPreco;
+    private JTextField txtQuantidade;
+    private JTextField txtVencimento;
     // End of variables declaration//GEN-END:variables
 }
