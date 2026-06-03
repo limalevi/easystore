@@ -6,7 +6,7 @@ package org.levilima.easystore;
  */
 public class Produto {
     private int codigo = 1, quantidade;
-    double preco;
+    private double preco;
     private String nome, categoria, validade;
     
     public Produto(String nome, String categoria, int quantidade, String validade, double preco) {
