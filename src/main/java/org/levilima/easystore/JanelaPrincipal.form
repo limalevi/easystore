@@ -51,13 +51,16 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblEasyStore" min="-2" max="-2" attributes="0"/>
-                  <Component id="menuSuperior" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                      <Component id="lblEasyStore" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="menuSuperior" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="conteudoPrincipal" pref="429" max="32767" attributes="0"/>
+                      <Component id="conteudoPrincipal" pref="388" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -87,26 +90,45 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Component id="btnAdicionarProduto" min="-2" pref="176" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Component id="btnAdicionarProduto" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnExcluirProduto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="btnAdicionarProduto" alignment="0" pref="35" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnAdicionarProduto" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnExcluirProduto" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JButton" name="btnAdicionarProduto">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Adicionar Produto"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="/home/levi/NetBeansProjects/EasyStore/img/icons8-add-24.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Adicionar um produto"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdicionarProdutoActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnExcluirProduto">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="/home/levi/NetBeansProjects/EasyStore/img/icons8-delete-24.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Adicionar um produto"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -128,13 +150,12 @@
                   <Component id="btnProdutos" min="-2" pref="34" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnVendas" min="-2" pref="34" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnClientes" min="-2" pref="34" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnRelatorios" min="-2" pref="34" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnSair" min="-2" pref="34" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -229,7 +250,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                      <Component id="scrollPane" pref="429" max="32767" attributes="0"/>
+                      <Component id="scrollPane" pref="388" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
