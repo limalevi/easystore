@@ -1,4 +1,4 @@
-package br.com.levilima.easystore;
+package org.levilima.easystore;
 
 /**
  *

@@ -1,4 +1,4 @@
-package br.com.levilima.easystore;
+package org.levilima.easystore;
 
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -59,7 +59,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         setBounds(new Rectangle(180, 50, 0, 0));
         setMinimumSize(new Dimension(1000, 560));
         setName("frame"); // NOI18N
-        setPreferredSize(new Dimension(1000, 560));
 
         lblEasyStore.setFont(new Font("Liberation Sans", 0, 24)); // NOI18N
         lblEasyStore.setForeground(new Color(0, 51, 255));
