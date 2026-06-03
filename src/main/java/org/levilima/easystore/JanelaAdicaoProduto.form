@@ -74,14 +74,12 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblVencimento" pref="92" max="32767" attributes="0"/>
                       <Component id="lblCategoria" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lblDescricao" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblNome" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblQuantidade" max="32767" attributes="0"/>
                       <Component id="lblPreco" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtDescricao" alignment="1" max="32767" attributes="0"/>
                       <Component id="txtCategoria" alignment="1" max="32767" attributes="0"/>
                       <Component id="txtVencimento" max="32767" attributes="0"/>
                       <Component id="txtNome" max="32767" attributes="0"/>
@@ -102,27 +100,22 @@
                       <Component id="lblNome" min="-2" max="-2" attributes="0"/>
                       <Component id="txtNome" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblDescricao" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtDescricao" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtCategoria" min="-2" max="-2" attributes="0"/>
                       <Component id="lblCategoria" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtCategoria" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblVencimento" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="txtVencimento" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblQuantidade" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="txtQuantidade" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblPreco" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="txtPreco" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -139,13 +132,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNome">
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblDescricao">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtDescricao">
         </Component>
         <Component class="javax.swing.JLabel" name="lblCategoria">
           <Properties>

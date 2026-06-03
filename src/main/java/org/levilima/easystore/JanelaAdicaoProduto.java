@@ -46,8 +46,6 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
         container = new JPanel();
         lblNome = new JLabel();
         txtNome = new JTextField();
-        lblDescricao = new JLabel();
-        txtDescricao = new JTextField();
         lblCategoria = new JLabel();
         txtCategoria = new JTextField();
         lblVencimento = new JLabel();
@@ -69,8 +67,6 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
 
         lblNome.setText("Nome*");
 
-        lblDescricao.setText("Descrição");
-
         lblCategoria.setText("Categoria");
 
         lblVencimento.setText("Vencimento*");
@@ -87,13 +83,11 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
                 .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(lblVencimento, GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                     .addComponent(lblCategoria, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblDescricao, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblNome, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblQuantidade, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblPreco, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDescricao, GroupLayout.Alignment.TRAILING)
                     .addComponent(txtCategoria, GroupLayout.Alignment.TRAILING)
                     .addComponent(txtVencimento)
                     .addComponent(txtNome)
@@ -108,23 +102,19 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
                 .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(lblNome)
                     .addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDescricao)
-                    .addComponent(txtDescricao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCategoria)
-                    .addComponent(txtCategoria, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtCategoria, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCategoria))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(lblVencimento)
                     .addComponent(txtVencimento, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(lblQuantidade)
                     .addComponent(txtQuantidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(lblPreco)
                     .addComponent(txtPreco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
@@ -188,7 +178,6 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
 
     private void btnAdicionarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
         String nome = txtNome.getText();
-        String descricao = txtDescricao.getText();
         String categoria = txtCategoria.getText();
         String vencimento = txtVencimento.getText();
         int quantidade = 0;
@@ -218,7 +207,7 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
             return;
         }
         
-        Produto produto = new Produto(nome, descricao, categoria, quantidade, vencimento, preco);
+        Produto produto = new Produto(nome, categoria, quantidade, vencimento, preco);
         
         loja.addProduto(produto);
         janelaPrincipal.atualizarTabela();
@@ -232,13 +221,11 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
     private JPanel container;
     private JLabel dica;
     private JLabel lblCategoria;
-    private JLabel lblDescricao;
     private JLabel lblNome;
     private JLabel lblPreco;
     private JLabel lblQuantidade;
     private JLabel lblVencimento;
     private JTextField txtCategoria;
-    private JTextField txtDescricao;
     private JTextField txtNome;
     private JTextField txtPreco;
     private JTextField txtQuantidade;

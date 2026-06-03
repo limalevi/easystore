@@ -132,14 +132,14 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código", "Produto", "Descrição", "Categoria", "Validade", "Quantidade", "Preço"
+                "Código", "Produto", "Categoria", "Validade", "Quantidade", "Preço"
             }
         ) {
             Class[] types = new Class [] {
-                Integer.class, String.class, String.class, String.class, String.class, Integer.class, Double.class
+                Integer.class, String.class, String.class, String.class, Integer.class, Double.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -237,7 +237,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             tabela.addRow(new Object[]{
                 produto.getCodigo(),
                 produto.getNome(),
-                produto.getDescricao(),
                 produto.getCategoria(),
                 produto.getValidade(),
                 produto.getQuantidade(),
