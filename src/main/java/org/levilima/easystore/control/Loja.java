@@ -1,11 +1,11 @@
-package org.levilima.control;
+package org.levilima.easystore.control;
 
 /**
  *
  * @author levi
  */
 import java.util.ArrayList;
-import org.levilima.model.Produto;
+import org.levilima.easystore.model.Produto;
 
 public class Loja {
     private ArrayList<Produto> produtos = new ArrayList<Produto>();

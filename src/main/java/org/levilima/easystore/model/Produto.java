@@ -1,6 +1,6 @@
-package org.levilima.model;
+package org.levilima.easystore.model;
 
-import org.levilima.control.Loja;
+import org.levilima.easystore.control.Loja;
 
 /**
  *

@@ -1,7 +1,7 @@
-package org.levilima.view;
+package org.levilima.easystore.view;
 
-import org.levilima.model.Produto;
-import org.levilima.control.Loja;
+import org.levilima.easystore.model.Produto;
+import org.levilima.easystore.control.Loja;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
