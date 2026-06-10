@@ -1,5 +1,7 @@
-package org.levilima.easystore;
+package org.levilima.view;
 
+import org.levilima.model.Produto;
+import org.levilima.control.Loja;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -195,9 +197,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addComponent(lblEasyStore))
+                    .addComponent(lblEasyStore)
                     .addComponent(menuSuperior, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)

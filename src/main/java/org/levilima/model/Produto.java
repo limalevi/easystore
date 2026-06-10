@@ -1,4 +1,6 @@
-package org.levilima.easystore;
+package org.levilima.model;
+
+import org.levilima.control.Loja;
 
 /**
  *

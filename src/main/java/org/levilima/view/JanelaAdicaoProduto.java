@@ -1,9 +1,11 @@
-package org.levilima.easystore;
+package org.levilima.view;
 
 /**
  *
  * @author levi
  */
+import org.levilima.model.Produto;
+import org.levilima.control.Loja;
 import java.awt.Color;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
