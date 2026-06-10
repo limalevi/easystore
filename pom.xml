@@ -8,6 +8,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>26</maven.compiler.release>
-        <exec.mainClass>org.levilima.view.JanelaPrincipal</exec.mainClass>
+        <exec.mainClass>org.levilima.easystore.view.JanelaPrincipal</exec.mainClass>
     </properties>
 </project>
