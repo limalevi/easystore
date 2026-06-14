@@ -39,6 +39,14 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
         Container = new JPanel();
         lblNome = new JLabel();
         txtNome = new JTextField();
+        lblCategoria = new JLabel();
+        txtCategoria = new JTextField();
+        lblVencimento = new JLabel();
+        txtVencimento = new JTextField();
+        lblQuantidade = new JLabel();
+        txtQuantidade = new JTextField();
+        lblPreco = new JLabel();
+        txtPreco = new JTextField();
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Editar um produto");
@@ -70,20 +78,53 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
 
         lblNome.setText("Nome");
 
+        lblCategoria.setText("Categoria");
+
+        lblVencimento.setText("Vencimento");
+
+        lblQuantidade.setText("Quantidade");
+
+        lblPreco.setText("Preço");
+
         GroupLayout ContainerLayout = new GroupLayout(Container);
         Container.setLayout(ContainerLayout);
         ContainerLayout.setHorizontalGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(ContainerLayout.createSequentialGroup()
-                .addComponent(lblNome)
+                .addGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCategoria)
+                    .addComponent(lblNome)
+                    .addComponent(lblVencimento)
+                    .addComponent(lblQuantidade)
+                    .addComponent(lblPreco))
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNome))
+                .addGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNome)
+                    .addComponent(txtCategoria, GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
+                    .addComponent(txtVencimento, GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
+                    .addComponent(txtQuantidade, GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
+                    .addComponent(txtPreco, GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)))
         );
         ContainerLayout.setVerticalGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(ContainerLayout.createSequentialGroup()
                 .addGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome)
                     .addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 128, Short.MAX_VALUE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCategoria)
+                    .addComponent(txtCategoria, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblVencimento)
+                    .addComponent(txtVencimento, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblQuantidade)
+                    .addComponent(txtQuantidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPreco)
+                    .addComponent(txtPreco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
         );
 
         GroupLayout layout = new GroupLayout(getContentPane());
@@ -94,7 +135,7 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(83, 83, 83)
                         .addComponent(botoes, GroupLayout.PREFERRED_SIZE, 235, GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 82, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(Container, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -104,7 +145,7 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Container, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botoes, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -125,7 +166,15 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
     private JPanel botoes;
     private JButton btnCancelar;
     private JButton btnEditar;
+    private JLabel lblCategoria;
     private JLabel lblNome;
+    private JLabel lblPreco;
+    private JLabel lblQuantidade;
+    private JLabel lblVencimento;
+    private JTextField txtCategoria;
     private JTextField txtNome;
+    private JTextField txtPreco;
+    private JTextField txtQuantidade;
+    private JTextField txtVencimento;
     // End of variables declaration//GEN-END:variables
 }

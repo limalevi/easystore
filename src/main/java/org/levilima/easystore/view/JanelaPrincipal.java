@@ -253,6 +253,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             return;
         }
         
+        int codigo = (int) tabelaProdutos.getValueAt(linhaSelecionada, 0);
+        
         JanelaEdicaoProduto janelaEdicaoProduto = new JanelaEdicaoProduto(loja, this);
         janelaEdicaoProduto.setLocationRelativeTo(this);
         janelaEdicaoProduto.setVisible(true);

@@ -30,7 +30,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                       <Component id="botoes" min="-2" pref="235" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="82" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -46,7 +46,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="Container" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="99" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="32767" attributes="0"/>
               <Component id="botoes" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -110,9 +110,21 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="lblNome" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblCategoria" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblNome" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblVencimento" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblQuantidade" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblPreco" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtNome" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtNome" max="32767" attributes="0"/>
+                      <Component id="txtCategoria" pref="314" max="32767" attributes="0"/>
+                      <Component id="txtVencimento" pref="314" max="32767" attributes="0"/>
+                      <Component id="txtQuantidade" pref="314" max="32767" attributes="0"/>
+                      <Component id="txtPreco" pref="314" max="32767" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -123,7 +135,26 @@
                       <Component id="lblNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="128" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblVencimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtVencimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblPreco" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPreco" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -135,6 +166,34 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNome">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCategoria">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Categoria"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCategoria">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblVencimento">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Vencimento"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtVencimento">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblQuantidade">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Quantidade"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtQuantidade">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblPreco">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pre&#xe7;o"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtPreco">
         </Component>
       </SubComponents>
     </Container>
