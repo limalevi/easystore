@@ -77,6 +77,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         btnEditarProduto.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-edit-24.png")); // NOI18N
         btnEditarProduto.setToolTipText("Editar um produto");
+        btnEditarProduto.addActionListener(this::btnEditarProdutoActionPerformed);
 
         btnExcluirProduto.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-delete-24.png")); // NOI18N
         btnExcluirProduto.setToolTipText("Excluir um produto");
@@ -242,6 +243,12 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         janelaRemocaoProduto.setLocationRelativeTo(this);
         janelaRemocaoProduto.setVisible(true);
     }//GEN-LAST:event_btnExcluirProdutoActionPerformed
+
+    private void btnEditarProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnEditarProdutoActionPerformed
+        JanelaEdicaoProduto janelaEdicaoProduto = new JanelaEdicaoProduto(loja, this);
+        janelaEdicaoProduto.setLocationRelativeTo(this);
+        janelaEdicaoProduto.setVisible(true);
+    }//GEN-LAST:event_btnEditarProdutoActionPerformed
 
     public static void main(String args[]) {
         try {

@@ -2,6 +2,7 @@ package org.levilima.easystore.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -9,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
+import org.levilima.easystore.control.Loja;
 
 /**
  *
@@ -16,7 +18,13 @@ import javax.swing.WindowConstants;
  */
 public class JanelaEdicaoProduto extends javax.swing.JFrame {
     
-    public JanelaEdicaoProduto() {
+    private final Loja loja;
+    private final JanelaPrincipal janelaPrincipal;
+    
+    public JanelaEdicaoProduto(Loja loja, JanelaPrincipal janelaPrincipal) {
+        this.loja = loja;
+        this.janelaPrincipal = janelaPrincipal;
+        
         initComponents();
     }
 
@@ -40,6 +48,7 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
 
         btnCancelar.setBackground(new Color(255, 0, 0));
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(this::btnCancelarActionPerformed);
 
         btnEditar.setText("Editar");
         btnEditar.setPreferredSize(new Dimension(84, 22));
@@ -85,6 +94,10 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private JPanel botoes;
