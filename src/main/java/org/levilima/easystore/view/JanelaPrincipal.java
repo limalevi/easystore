@@ -34,6 +34,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     
     public JanelaPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
         atualizarTabela();
     }
 
@@ -224,11 +225,15 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnAdicionarProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarProdutoActionPerformed
-        new JanelaAdicaoProduto(loja, this).setVisible(true);
+        JanelaAdicaoProduto janelaAdicaoProduto = new JanelaAdicaoProduto(loja, this);
+        janelaAdicaoProduto.setLocationRelativeTo(this);
+        janelaAdicaoProduto.setVisible(true);
     }//GEN-LAST:event_btnAdicionarProdutoActionPerformed
 
     private void btnExcluirProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnExcluirProdutoActionPerformed
-        new JanelaRemocaoProduto(loja, this).setVisible(true);
+        JanelaRemocaoProduto janelaRemocaoProduto = new JanelaRemocaoProduto(loja, this);
+        janelaRemocaoProduto.setLocationRelativeTo(this);
+        janelaRemocaoProduto.setVisible(true);
     }//GEN-LAST:event_btnExcluirProdutoActionPerformed
 
     public static void main(String args[]) {
