@@ -76,7 +76,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btnAdicionarProduto.addActionListener(this::btnAdicionarProdutoActionPerformed);
 
         btnEditarProduto.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-edit-24.png")); // NOI18N
-        btnEditarProduto.setToolTipText("Excluir um produto");
+        btnEditarProduto.setToolTipText("Editar um produto");
 
         btnExcluirProduto.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-delete-24.png")); // NOI18N
         btnExcluirProduto.setToolTipText("Excluir um produto");
