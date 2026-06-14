@@ -45,6 +45,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         lblEasyStore = new JLabel();
         menuSuperior = new JPanel();
         btnAdicionarProduto = new JButton();
+        btnEditarProduto = new JButton();
         btnExcluirProduto = new JButton();
         menuLateral = new JPanel();
         btnProdutos = new JButton();
@@ -74,6 +75,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btnAdicionarProduto.setToolTipText("Adicionar um produto");
         btnAdicionarProduto.addActionListener(this::btnAdicionarProdutoActionPerformed);
 
+        btnEditarProduto.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-edit-24.png")); // NOI18N
+        btnEditarProduto.setToolTipText("Excluir um produto");
+
         btnExcluirProduto.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-delete-24.png")); // NOI18N
         btnExcluirProduto.setToolTipText("Excluir um produto");
         btnExcluirProduto.addActionListener(this::btnExcluirProdutoActionPerformed);
@@ -84,6 +88,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             .addGroup(menuSuperiorLayout.createSequentialGroup()
                 .addComponent(btnAdicionarProduto)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEditarProduto)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnExcluirProduto)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -91,7 +97,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             .addGroup(menuSuperiorLayout.createSequentialGroup()
                 .addGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(btnAdicionarProduto)
-                    .addComponent(btnExcluirProduto))
+                    .addComponent(btnExcluirProduto)
+                    .addComponent(btnEditarProduto))
                 .addGap(0, 0, 0))
         );
 
@@ -176,7 +183,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         produtosLayout.setVerticalGroup(produtosLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(GroupLayout.Alignment.TRAILING, produtosLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
+                .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE))
         );
 
         conteudoPrincipal.add(produtos, "produtos");
@@ -204,7 +211,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(conteudoPrincipal, GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                        .addComponent(conteudoPrincipal, GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
                         .addGap(7, 7, 7))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(menuLateral, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -271,6 +278,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private JButton btnAdicionarProduto;
     private JButton btnClientes;
+    private JButton btnEditarProduto;
     private JButton btnExcluirProduto;
     private JButton btnProdutos;
     private JButton btnRelatorios;

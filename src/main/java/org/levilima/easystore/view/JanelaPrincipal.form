@@ -57,7 +57,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="conteudoPrincipal" pref="388" max="32767" attributes="0"/>
+                      <Component id="conteudoPrincipal" pref="352" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -90,6 +90,8 @@
               <Group type="102" attributes="0">
                   <Component id="btnAdicionarProduto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnEditarProduto" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnExcluirProduto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -101,6 +103,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnAdicionarProduto" min="-2" max="-2" attributes="0"/>
                       <Component id="btnExcluirProduto" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEditarProduto" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               </Group>
@@ -118,6 +121,14 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdicionarProdutoActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnEditarProduto">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="/home/levi/NetBeansProjects/EasyStore/img/icons8-edit-24.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Excluir um produto"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnExcluirProduto">
           <Properties>
@@ -250,7 +261,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                      <Component id="scrollPane" pref="388" max="32767" attributes="0"/>
+                      <Component id="scrollPane" pref="352" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
