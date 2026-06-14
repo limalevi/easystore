@@ -22,4 +22,15 @@ public class Loja {
     public boolean removerProduto(int codigo) {
         return produtos.removeIf(produto -> produto.getCodigo() == codigo);
     }
+    
+    public void editarProduto(int codigo) {
+        for(Produto produto : produtos) {
+            if(codigo == produto.getCodigo()) {
+                System.out.println("O produto existe!");
+            } else {
+                System.out.println("O produto não existe!");
+                return;
+            }
+        }
+    }
 }

@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
@@ -52,6 +53,7 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
 
         btnEditar.setText("Editar");
         btnEditar.setPreferredSize(new Dimension(84, 22));
+        btnEditar.addActionListener(this::btnEditarActionPerformed);
 
         GroupLayout botoesLayout = new GroupLayout(botoes);
         botoes.setLayout(botoesLayout);
@@ -98,6 +100,20 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnEditarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        int codigo = 0;
+        
+        try {
+            codigo = Integer.parseInt(txtCodigo.getText());
+        } catch(NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Digite um código válido!");
+            return;
+        }
+        
+        loja.editarProduto(codigo);
+        this.dispose();
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private JPanel botoes;
