@@ -14,6 +14,7 @@ import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -245,6 +246,13 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExcluirProdutoActionPerformed
 
     private void btnEditarProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnEditarProdutoActionPerformed
+        int linhaSelecionada = tabelaProdutos.getSelectedRow();
+        
+        if(linhaSelecionada == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um produto!");
+            return;
+        }
+        
         JanelaEdicaoProduto janelaEdicaoProduto = new JanelaEdicaoProduto(loja, this);
         janelaEdicaoProduto.setLocationRelativeTo(this);
         janelaEdicaoProduto.setVisible(true);

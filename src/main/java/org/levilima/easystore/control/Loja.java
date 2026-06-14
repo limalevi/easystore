@@ -23,14 +23,17 @@ public class Loja {
         return produtos.removeIf(produto -> produto.getCodigo() == codigo);
     }
     
-    public void editarProduto(int codigo) {
+    public boolean editarProduto(int codigo, String nome, String categoria, String vencimento, int quantidade, double preco) {
         for(Produto produto : produtos) {
             if(codigo == produto.getCodigo()) {
-                System.out.println("O produto existe!");
-            } else {
-                System.out.println("O produto não existe!");
-                return;
+                produto.setNome(nome);
+                produto.setCategoria(categoria);
+                produto.setValidade(vencimento);
+                produto.setQuantidade(quantidade);
+                produto.setPreco(preco);
+                return true;
             }
         }
+        return false;
     }
 }
