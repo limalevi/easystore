@@ -11,6 +11,8 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
+import javax.swing.JOptionPane;
+import org.levilima.easystore.control.Loja;
 
 /**
  *
@@ -18,7 +20,13 @@ import javax.swing.WindowConstants;
  */
 public class JanelaRemocaoProduto extends javax.swing.JFrame {
     
-    public JanelaRemocaoProduto() {
+    private final Loja loja;
+    private final JanelaPrincipal janelaPrincipal;
+    
+    public JanelaRemocaoProduto(Loja loja, JanelaPrincipal janelaPrincipal) {
+        this.loja = loja;
+        this.janelaPrincipal = janelaPrincipal;
+        
         initComponents();
     }
 
@@ -30,8 +38,6 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
         Container = new JPanel();
         lblCodigo = new JLabel();
         txtCodigo = new JTextField();
-        lblQuantidade = new JLabel();
-        txtQuantidade = new JTextField();
         botoes = new JPanel();
         btnCancelar = new JButton();
         btnRemover = new JButton();
@@ -45,29 +51,19 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
 
         lblCodigo.setText("Código");
 
-        lblQuantidade.setText("Quantidade");
-
         GroupLayout ContainerLayout = new GroupLayout(Container);
         Container.setLayout(ContainerLayout);
         ContainerLayout.setHorizontalGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(ContainerLayout.createSequentialGroup()
-                .addGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(lblQuantidade)
-                    .addComponent(lblCodigo))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodigo)
-                    .addComponent(txtQuantidade, GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)))
+                .addComponent(lblCodigo)
+                .addGap(32, 32, 32)
+                .addComponent(txtCodigo, GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE))
         );
         ContainerLayout.setVerticalGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(ContainerLayout.createSequentialGroup()
                 .addGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigo)
                     .addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblQuantidade)
-                    .addComponent(txtQuantidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
@@ -79,6 +75,7 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
         btnRemover.setBackground(new Color(255, 0, 0));
         btnRemover.setText("Remover");
         btnRemover.setPreferredSize(new Dimension(84, 22));
+        btnRemover.addActionListener(this::btnRemoverActionPerformed);
 
         GroupLayout botoesLayout = new GroupLayout(botoes);
         botoes.setLayout(botoesLayout);
@@ -127,6 +124,24 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    private void btnRemoverActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
+        int codigo = 0;
+        
+        try {
+            codigo = Integer.parseInt(txtCodigo.getText());
+        } catch(NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Digite um código válido!");
+            return;
+        }
+        
+        if(loja.removerProduto(codigo)) {
+            janelaPrincipal.atualizarTabela();
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Produto não encontrado!");
+        }
+    }//GEN-LAST:event_btnRemoverActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private JPanel Container;
     private JPanel botoes;
@@ -134,8 +149,6 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
     private JButton btnRemover;
     private JLabel dica;
     private JLabel lblCodigo;
-    private JLabel lblQuantidade;
     private JTextField txtCodigo;
-    private JTextField txtQuantidade;
     // End of variables declaration//GEN-END:variables
 }

@@ -18,4 +18,8 @@ public class Loja {
     public ArrayList<Produto> getProduto() {
         return this.produtos;
     }
+    
+    public boolean removerProduto(int codigo) {
+        return produtos.removeIf(produto -> produto.getCodigo() == codigo);
+    }
 }

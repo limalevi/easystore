@@ -228,7 +228,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAdicionarProdutoActionPerformed
 
     private void btnExcluirProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnExcluirProdutoActionPerformed
-        new JanelaRemocaoProduto().setVisible(true);
+        new JanelaRemocaoProduto(loja, this).setVisible(true);
     }//GEN-LAST:event_btnExcluirProdutoActionPerformed
 
     public static void main(String args[]) {

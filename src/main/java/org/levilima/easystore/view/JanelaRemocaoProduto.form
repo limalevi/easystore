@@ -70,15 +70,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblQuantidade" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblCodigo" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtCodigo" max="32767" attributes="0"/>
-                      <Component id="txtQuantidade" pref="274" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="lblCodigo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="txtCodigo" pref="274" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -88,11 +82,6 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
               </Group>
@@ -106,13 +95,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCodigo">
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblQuantidade">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Quantidade"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtQuantidade">
         </Component>
       </SubComponents>
     </Container>
@@ -159,6 +141,9 @@
               <Dimension value="[84, 22]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
