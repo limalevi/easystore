@@ -36,7 +36,7 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
         btnCancelar = new JButton();
         btnRemover = new JButton();
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Remova um produto");
         setResizable(false);
 
@@ -74,6 +74,7 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
         botoes.setPreferredSize(new Dimension(292, 39));
 
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(this::btnCancelarActionPerformed);
 
         btnRemover.setBackground(new Color(255, 0, 0));
         btnRemover.setText("Remover");
@@ -121,6 +122,10 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private JPanel Container;
