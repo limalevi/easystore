@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
 import org.levilima.easystore.control.Loja;
+import org.levilima.easystore.model.Produto;
 
 /**
  *
@@ -21,12 +22,24 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
     
     private final Loja loja;
     private final JanelaPrincipal janelaPrincipal;
+    private Produto produtoAlvo;
     
-    public JanelaEdicaoProduto(Loja loja, JanelaPrincipal janelaPrincipal) {
+    public JanelaEdicaoProduto(Loja loja, JanelaPrincipal janelaPrincipal, Produto produtoAlvo) {
         this.loja = loja;
         this.janelaPrincipal = janelaPrincipal;
+        this.produtoAlvo = produtoAlvo;
         
         initComponents();
+        preencherCampos();
+    }
+    
+    private void preencherCampos() {
+        setTitle("Editar Produto - Código: " + produtoAlvo.getCodigo());
+        txtNome.setText(produtoAlvo.getNome());
+        txtCategoria.setText(produtoAlvo.getCategoria());
+        txtVencimento.setText(produtoAlvo.getValidade());
+        txtQuantidade.setText(String.valueOf(produtoAlvo.getQuantidade()));
+        txtPreco.setText(String.valueOf(produtoAlvo.getPreco()));
     }
 
     @SuppressWarnings("unchecked")
@@ -158,6 +171,27 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnEditarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        try {
+            String nome = txtNome.getText();
+            String categoria = txtCategoria.getText();
+            String vencimento = txtVencimento.getText();
+            int quantidade = Integer.parseInt(txtQuantidade.getText());
+            double preco = Double.parseDouble(txtPreco.getText());
+            
+            boolean sucesso = loja.editarProduto(produtoAlvo.getCodigo(), nome, categoria, vencimento, quantidade, preco);
+            
+            if(sucesso) {
+                JOptionPane.showMessageDialog(this, "Produto editado com sucesso!");
+                janelaPrincipal.atualizarTabela();
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro: Produto não encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch(NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Erro: Insira valores válidos para a quantidade e preço!", "Erro de formatação", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         this.dispose();
     }//GEN-LAST:event_btnEditarActionPerformed
 
