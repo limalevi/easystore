@@ -240,7 +240,24 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAdicionarProdutoActionPerformed
 
     private void btnExcluirProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnExcluirProdutoActionPerformed
-        JanelaRemocaoProduto janelaRemocaoProduto = new JanelaRemocaoProduto(loja, this);
+        int linhaSelecionada = tabelaProdutos.getSelectedRow();
+        
+        if(linhaSelecionada == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um produto!");
+            return;
+        }
+        
+        int codigo = (int) tabelaProdutos.getValueAt(linhaSelecionada, 0);
+        
+        Produto produtoSelecionado = null;
+        for(Produto produto : loja.getProduto()) {
+            if(codigo == produto.getCodigo()) {
+                produtoSelecionado = produto;
+                break;
+            }
+        }
+        
+        JanelaRemocaoProduto janelaRemocaoProduto = new JanelaRemocaoProduto(loja, this, produtoSelecionado);
         janelaRemocaoProduto.setLocationRelativeTo(this);
         janelaRemocaoProduto.setVisible(true);
     }//GEN-LAST:event_btnExcluirProdutoActionPerformed

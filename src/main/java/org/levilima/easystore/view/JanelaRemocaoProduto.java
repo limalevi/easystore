@@ -6,13 +6,13 @@ import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
-import javax.swing.JOptionPane;
 import org.levilima.easystore.control.Loja;
+import org.levilima.easystore.model.Produto;
 
 /**
  *
@@ -22,10 +22,12 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
     
     private final Loja loja;
     private final JanelaPrincipal janelaPrincipal;
+    private Produto produtoAlvo;
     
-    public JanelaRemocaoProduto(Loja loja, JanelaPrincipal janelaPrincipal) {
+    public JanelaRemocaoProduto(Loja loja, JanelaPrincipal janelaPrincipal, Produto produtoAlvo) {
         this.loja = loja;
         this.janelaPrincipal = janelaPrincipal;
+        this.produtoAlvo = produtoAlvo;
         
         initComponents();
     }
@@ -34,10 +36,7 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dica = new JLabel();
-        Container = new JPanel();
-        lblCodigo = new JLabel();
-        txtCodigo = new JTextField();
+        pergunta = new JLabel();
         botoes = new JPanel();
         btnCancelar = new JButton();
         btnRemover = new JButton();
@@ -46,26 +45,9 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
         setTitle("Remova um produto");
         setResizable(false);
 
-        dica.setHorizontalAlignment(SwingConstants.CENTER);
-        dica.setText("Digite o código e a quantidade do produto desejado");
-
-        lblCodigo.setText("Código");
-
-        GroupLayout ContainerLayout = new GroupLayout(Container);
-        Container.setLayout(ContainerLayout);
-        ContainerLayout.setHorizontalGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(ContainerLayout.createSequentialGroup()
-                .addComponent(lblCodigo)
-                .addGap(32, 32, 32)
-                .addComponent(txtCodigo, GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE))
-        );
-        ContainerLayout.setVerticalGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(ContainerLayout.createSequentialGroup()
-                .addGroup(ContainerLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCodigo)
-                    .addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
+        pergunta.setHorizontalAlignment(SwingConstants.CENTER);
+        pergunta.setText("<html>\nDeseja realmente excluir o<br>\nproduto selecionado?\n\n<br>\n<br>\n\nEstá ação não pode ser desfeita!\n</html>");
+        pergunta.setHorizontalTextPosition(SwingConstants.CENTER);
 
         botoes.setPreferredSize(new Dimension(292, 39));
 
@@ -94,27 +76,19 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(Container, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(dica, GroupLayout.PREFERRED_SIZE, 331, GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botoes, GroupLayout.PREFERRED_SIZE, 247, GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56))
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botoes, GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                    .addComponent(pergunta))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(dica)
+                .addComponent(pergunta, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Container, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botoes, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -125,30 +99,21 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnRemoverActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
-        int codigo = 0;
+        boolean sucesso = loja.removerProduto(produtoAlvo.getCodigo());
         
-        try {
-            codigo = Integer.parseInt(txtCodigo.getText());
-        } catch(NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Digite um código válido!");
-            return;
-        }
-        
-        if(loja.removerProduto(codigo)) {
+        if(sucesso) {
+            JOptionPane.showMessageDialog(this, "Produto excluído com sucesso!");
             janelaPrincipal.atualizarTabela();
             this.dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "Produto não encontrado!");
+            JOptionPane.showMessageDialog(this, "Erro: Produto não encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnRemoverActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private JPanel Container;
     private JPanel botoes;
     private JButton btnCancelar;
     private JButton btnRemover;
-    private JLabel dica;
-    private JLabel lblCodigo;
-    private JTextField txtCodigo;
+    private JLabel pergunta;
     // End of variables declaration//GEN-END:variables
 }
