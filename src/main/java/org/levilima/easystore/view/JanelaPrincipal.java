@@ -1,5 +1,6 @@
 package org.levilima.easystore.view;
 
+import com.formdev.flatlaf.FlatLightLaf;
 import org.levilima.easystore.model.Produto;
 import org.levilima.easystore.control.Loja;
 import java.awt.CardLayout;
@@ -29,8 +30,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class JanelaPrincipal extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JanelaPrincipal.class.getName());
-
     private Loja loja = new Loja();
     
     public JanelaPrincipal() {
@@ -286,16 +285,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditarProdutoActionPerformed
 
     public static void main(String args[]) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        FlatLightLaf.setup();
         
         java.awt.EventQueue.invokeLater(() -> new JanelaPrincipal().setVisible(true));
     }
