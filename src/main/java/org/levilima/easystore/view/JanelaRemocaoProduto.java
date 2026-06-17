@@ -103,6 +103,7 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
         
         if(sucesso) {
             JOptionPane.showMessageDialog(this, "Produto excluído com sucesso!");
+            loja.salvarDados();
             janelaPrincipal.atualizarTabela();
             this.dispose();
         } else {

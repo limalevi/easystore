@@ -11,6 +11,8 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -35,6 +37,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     public JanelaPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
+        loja.carregarDados();
         atualizarTabela();
     }
 
@@ -65,6 +68,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         setBounds(new Rectangle(180, 50, 0, 0));
         setMinimumSize(new Dimension(1000, 560));
         setName("frame"); // NOI18N
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         lblEasyStore.setFont(new Font("Liberation Sans", 0, 24)); // NOI18N
         lblEasyStore.setForeground(new Color(0, 51, 255));
@@ -283,6 +291,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         janelaEdicaoProduto.setLocationRelativeTo(this);
         janelaEdicaoProduto.setVisible(true);
     }//GEN-LAST:event_btnEditarProdutoActionPerformed
+
+    private void formWindowClosing(WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        loja.salvarDados();
+    }//GEN-LAST:event_formWindowClosing
 
     public static void main(String args[]) {
         FlatLightLaf.setup();

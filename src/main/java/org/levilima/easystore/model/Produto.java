@@ -1,12 +1,14 @@
 package org.levilima.easystore.model;
 
 import org.levilima.easystore.control.Loja;
+import java.io.Serializable;
 
 /**
  *
  * @author levi
  */
-public class Produto {
+public class Produto implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int codigo = 1, quantidade;
     private double preco;
     private String nome, categoria, validade;
