@@ -238,7 +238,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProdutosActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
-        java.awt.CardLayout cardLayout = (java.awt.CardLayout) conteudoPrincipal.getLayout();
+        CardLayout cardLayout = (CardLayout) conteudoPrincipal.getLayout();
         
         cardLayout.show(conteudoPrincipal, "produtos");
     }//GEN-LAST:event_btnProdutosActionPerformed
