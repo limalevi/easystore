@@ -3,6 +3,8 @@ package org.levilima.easystore.view;
 import com.formdev.flatlaf.FlatLightLaf;
 import org.levilima.easystore.model.Produto;
 import org.levilima.easystore.control.Loja;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -40,6 +42,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         loja.carregarDados();
         atualizarTabela();
+        mostrarData();
     }
 
     @SuppressWarnings("unchecked")
@@ -324,6 +327,13 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 produto.getPreco()
             });
         }
+    }
+    
+    public void mostrarData() {
+        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+        Date data = new Date();
+        
+        System.out.println("Data e hora: " + formatoData.format(data));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
