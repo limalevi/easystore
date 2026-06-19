@@ -133,6 +133,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btnClientes.setText("Clientes");
 
         btnRelatorios.setText("Relatórios");
+        btnRelatorios.addActionListener(this::btnRelatoriosActionPerformed);
 
         btnSair.setBackground(new Color(255, 0, 0));
         btnSair.setText("Sair");
@@ -211,6 +212,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         conteudoPrincipal.add(produtos, "produtos");
 
+        txtRelatorios.setEditable(false);
         txtRelatorios.setColumns(20);
         txtRelatorios.setRows(5);
         scrollPane2.setViewportView(txtRelatorios);
@@ -224,7 +226,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
         );
 
-        conteudoPrincipal.add(relatorios, "card3");
+        conteudoPrincipal.add(relatorios, "relatorios");
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -324,6 +326,12 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private void formWindowClosing(WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         loja.salvarDados();
     }//GEN-LAST:event_formWindowClosing
+
+    private void btnRelatoriosActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnRelatoriosActionPerformed
+        CardLayout cardLayout = (CardLayout) conteudoPrincipal.getLayout();
+        
+        cardLayout.show(conteudoPrincipal, "relatorios");
+    }//GEN-LAST:event_btnRelatoriosActionPerformed
 
     public static void main(String args[]) {
         FlatLightLaf.setup();
