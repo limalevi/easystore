@@ -24,6 +24,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.LayoutStyle;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
@@ -67,6 +68,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         produtos = new JPanel();
         scrollPane = new JScrollPane();
         tabelaProdutos = new JTable();
+        relatorios = new JPanel();
+        scrollPane2 = new JScrollPane();
+        txtRelatorios = new JTextArea();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("EasyStore");
@@ -202,10 +206,25 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         produtosLayout.setVerticalGroup(produtosLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(GroupLayout.Alignment.TRAILING, produtosLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE))
+                .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
         );
 
         conteudoPrincipal.add(produtos, "produtos");
+
+        txtRelatorios.setColumns(20);
+        txtRelatorios.setRows(5);
+        scrollPane2.setViewportView(txtRelatorios);
+
+        GroupLayout relatoriosLayout = new GroupLayout(relatorios);
+        relatorios.setLayout(relatoriosLayout);
+        relatoriosLayout.setHorizontalGroup(relatoriosLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addComponent(scrollPane2, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+        );
+        relatoriosLayout.setVerticalGroup(relatoriosLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+        );
+
+        conteudoPrincipal.add(relatorios, "card3");
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -230,7 +249,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(conteudoPrincipal, GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+                        .addComponent(conteudoPrincipal, GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
                         .addGap(7, 7, 7))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(menuLateral, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -352,8 +371,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JPanel menuSuperior;
     private JPanel msgBoasVindas;
     private JPanel produtos;
+    private JPanel relatorios;
     private JScrollPane scrollPane;
+    private JScrollPane scrollPane2;
     private JSeparator separador1;
     private JTable tabelaProdutos;
+    private JTextArea txtRelatorios;
     // End of variables declaration//GEN-END:variables
 }
