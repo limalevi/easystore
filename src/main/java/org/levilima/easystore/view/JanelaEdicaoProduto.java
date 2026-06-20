@@ -183,6 +183,8 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
             if(sucesso) {
                 JOptionPane.showMessageDialog(this, "Produto editado com sucesso!");
                 loja.salvarDados();
+                janelaPrincipal.gerRelatorios.gerarEdicao(produtoAlvo.getCodigo());
+                janelaPrincipal.atualizarTextoRelatorio();
                 janelaPrincipal.atualizarTabela();
                 this.dispose();
             } else {
