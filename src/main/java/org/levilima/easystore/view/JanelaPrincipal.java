@@ -355,22 +355,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         }
     }
     
-    public String gerarData() {
-        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
-        Date data = new Date();
-        String dataHora = formatoData.format(data);
-        
-        return dataHora + "\n";
-    }
-    
-    String conteudo = "";
-    
-    public void gerarRelatorio(String nome, int quantidade) {
-        conteudo += gerarData() + "Adicionado " + quantidade + " " + nome + ".\n\n";
-        
-        txtRelatorios.setText(conteudo);
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private JButton btnAdicionarProduto;
     private JButton btnCarrinho;
