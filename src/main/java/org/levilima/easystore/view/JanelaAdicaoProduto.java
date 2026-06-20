@@ -6,7 +6,6 @@ package org.levilima.easystore.view;
  */
 import org.levilima.easystore.model.Produto;
 import org.levilima.easystore.control.Loja;
-import org.levilima.easystore.control.Relatorios;
 import java.awt.Color;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
