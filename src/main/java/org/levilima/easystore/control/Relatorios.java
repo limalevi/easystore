@@ -1,14 +1,18 @@
 package org.levilima.easystore.control;
 
+<<<<<<< HEAD
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JTextArea;
 
+=======
+>>>>>>> parent of 7f975ca (updated: métodos gerar data e gerar relatório movidos para a classe relatórios)
 /**
 *
 * @author levi
 */
 public class Relatorios {
+<<<<<<< HEAD
     String conteudo = "";
     
     public String gerarData() {
@@ -24,4 +28,7 @@ public class Relatorios {
         
         return conteudo;
     }
+=======
+
+>>>>>>> parent of 7f975ca (updated: métodos gerar data e gerar relatório movidos para a classe relatórios)
 }
