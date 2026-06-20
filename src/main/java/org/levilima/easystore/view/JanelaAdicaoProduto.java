@@ -21,8 +21,6 @@ import javax.swing.WindowConstants;
 
 public class JanelaAdicaoProduto extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JanelaAdicaoProduto.class.getName());
-
     private final Loja loja;
     private final JanelaPrincipal janelaPrincipal;
     
