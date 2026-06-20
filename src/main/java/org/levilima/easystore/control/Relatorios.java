@@ -22,6 +22,10 @@ public class Relatorios {
         conteudo += gerarData() + "Adicionado " + quantidade + " " + nome + ".\n\n";
     }
     
+    public void gerarRemocao(String nome, int quantidade) {
+        conteudo += gerarData() + "Removido " + quantidade + " " + nome + ".\n\n";
+    }
+    
     public String getText() {
         return this.conteudo;
     }
