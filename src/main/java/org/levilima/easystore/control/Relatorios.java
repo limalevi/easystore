@@ -11,6 +11,7 @@ import java.io.IOException;
 * @author levi
 */
 public class Relatorios {
+    private static final String ARQUIVO = "relatorio.txt";
     String conteudo = "";
     
     public String gerarData() {
@@ -39,12 +40,23 @@ public class Relatorios {
     
     public void salvarRelatorios() {
         try {
-            FileWriter arquivo = new FileWriter("relatorios.txt");
+            FileWriter arquivo = new FileWriter(ARQUIVO);
             arquivo.write(conteudo);
             arquivo.close();
             System.out.println("Relatórios salvo com sucesso!");
         } catch(IOException e) {
             System.err.println("Erro ao salvar os relatórios: " + e.getMessage());
+        }
+    }
+    
+    public void carregarRelatorios() {
+        try {
+            FileReader arquivo = new FileReader(ARQUIVO);
+            conteudo = arquivo.readAllAsString();
+            arquivo.close();
+            System.out.println("Relatório carregado com sucesso!");
+        } catch(IOException e) {
+            System.err.println("Erro ao carregar o relatório: " + e.getMessage());
         }
     }
 }
