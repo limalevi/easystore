@@ -207,6 +207,7 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
         loja.addProduto(produto);
         loja.salvarDados();
         janelaPrincipal.gerRelatorios.gerarAdição(nome, quantidade);
+        janelaPrincipal.gerRelatorios.salvarRelatorios();
         janelaPrincipal.atualizarTextoRelatorio();
         janelaPrincipal.atualizarTabela();
         this.dispose();
