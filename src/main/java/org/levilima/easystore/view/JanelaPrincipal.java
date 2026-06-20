@@ -69,6 +69,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         produtos = new JPanel();
         scrollPane = new JScrollPane();
         tabelaProdutos = new JTable();
+        carrinho = new JPanel();
+        scrollPane3 = new JScrollPane();
+        tabelaCarrinho = new JTable();
         relatorios = new JPanel();
         scrollPane2 = new JScrollPane();
         txtRelatorios = new JTextArea();
@@ -212,6 +215,45 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         );
 
         conteudoPrincipal.add(produtos, "produtos");
+
+        tabelaCarrinho.setModel(new DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Código", "Produto", "Categoria", "Validade", "Quantidade", "Preço"
+            }
+        ) {
+            Class[] types = new Class [] {
+                Integer.class, String.class, String.class, String.class, Integer.class, Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaCarrinho.getTableHeader().setReorderingAllowed(false);
+        scrollPane3.setViewportView(tabelaCarrinho);
+
+        GroupLayout carrinhoLayout = new GroupLayout(carrinho);
+        carrinho.setLayout(carrinhoLayout);
+        carrinhoLayout.setHorizontalGroup(carrinhoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addComponent(scrollPane3, GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+        );
+        carrinhoLayout.setVerticalGroup(carrinhoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(GroupLayout.Alignment.TRAILING, carrinhoLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(scrollPane3, GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
+        );
+
+        conteudoPrincipal.add(carrinho, "carrinho");
 
         txtRelatorios.setEditable(false);
         txtRelatorios.setColumns(20);
@@ -370,6 +412,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JButton btnProdutos;
     private JButton btnRelatorios;
     private JButton btnSair;
+    private JPanel carrinho;
     private JPanel conteudoPrincipal;
     private JLabel lblBoasVindas;
     private JLabel lblEasyStore;
@@ -380,7 +423,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JPanel relatorios;
     private JScrollPane scrollPane;
     private JScrollPane scrollPane2;
+    private JScrollPane scrollPane3;
     private JSeparator separador1;
+    private JTable tabelaCarrinho;
     private JTable tabelaProdutos;
     private JTextArea txtRelatorios;
     // End of variables declaration//GEN-END:variables
