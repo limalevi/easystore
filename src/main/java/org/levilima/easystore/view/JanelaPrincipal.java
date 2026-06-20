@@ -36,7 +36,6 @@ import javax.swing.table.DefaultTableModel;
 public class JanelaPrincipal extends javax.swing.JFrame {
     
     private Loja loja = new Loja();
-    private Relatorios relatorios = new Relatorios();
     
     public JanelaPrincipal() {
         initComponents();
@@ -353,22 +352,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 produto.getPreco()
             });
         }
-    }
-    
-    public String gerarData() {
-        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
-        Date data = new Date();
-        String dataHora = formatoData.format(data);
-        
-        return dataHora + "\n";
-    }
-    
-    String conteudo = "";
-    
-    public void gerarRelatorio(String nome, int quantidade) {
-        conteudo += gerarData() + "Adicionado " + quantidade + " " + nome + ".\n\n";
-        
-        txtRelatorios.setText(conteudo);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
