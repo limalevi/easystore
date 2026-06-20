@@ -18,9 +18,7 @@ public class Relatorios {
         return dataHora + "\n";
     }
     
-    public String gerarRelatorio(String nome, int quantidade) {
+    public void gerarAdição(String nome, int quantidade) {
         conteudo += gerarData() + "Adicionado " + quantidade + " " + nome + ".\n\n";
-        
-        return conteudo;
     }
 }
