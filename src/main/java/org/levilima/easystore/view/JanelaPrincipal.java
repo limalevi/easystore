@@ -133,6 +133,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btnProdutos.addActionListener(this::btnProdutosActionPerformed);
 
         btnCarrinho.setText("Carrinho");
+        btnCarrinho.addActionListener(this::btnCarrinhoActionPerformed);
 
         btnClientes.setText("Clientes");
 
@@ -375,6 +376,12 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         
         cardLayout.show(conteudoPrincipal, "relatorios");
     }//GEN-LAST:event_btnRelatoriosActionPerformed
+
+    private void btnCarrinhoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCarrinhoActionPerformed
+        CardLayout cardLayout = (CardLayout) conteudoPrincipal.getLayout();
+        
+        cardLayout.show(conteudoPrincipal, "carrinho");
+    }//GEN-LAST:event_btnCarrinhoActionPerformed
 
     public static void main(String args[]) {
         FlatLightLaf.setup();
