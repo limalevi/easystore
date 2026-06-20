@@ -2,6 +2,7 @@ package org.levilima.easystore.control;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
@@ -50,6 +51,11 @@ public class Relatorios {
     }
     
     public void carregarRelatorios() {
+        File arq = new File(ARQUIVO);
+        
+        if(!arq.exists())
+            return;
+        
         try {
             FileReader arquivo = new FileReader(ARQUIVO);
             conteudo = arquivo.readAllAsString();
