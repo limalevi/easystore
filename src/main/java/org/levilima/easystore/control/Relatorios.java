@@ -21,4 +21,8 @@ public class Relatorios {
     public void gerarAdição(String nome, int quantidade) {
         conteudo += gerarData() + "Adicionado " + quantidade + " " + nome + ".\n\n";
     }
+    
+    public String getText() {
+        return this.conteudo;
+    }
 }
