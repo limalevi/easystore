@@ -26,6 +26,10 @@ public class Relatorios {
         conteudo += gerarData() + "Removido " + quantidade + " " + nome + ".\n\n";
     }
     
+    public void gerarEdicao(int codigo) {
+        conteudo += gerarData() + "Produto de código " + codigo + " editado.\n\n";
+    }
+    
     public String getText() {
         return this.conteudo;
     }
