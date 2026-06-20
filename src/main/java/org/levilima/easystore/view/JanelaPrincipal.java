@@ -42,6 +42,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         loja.carregarDados();
+        gerRelatorios.carregarRelatorios();
+        atualizarTextoRelatorio();
         atualizarTabela();
     }
 
