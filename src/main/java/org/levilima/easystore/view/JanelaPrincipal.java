@@ -36,6 +36,7 @@ import javax.swing.table.DefaultTableModel;
 public class JanelaPrincipal extends javax.swing.JFrame {
     
     private Loja loja = new Loja();
+    public Relatorios gerRelatorios = new Relatorios();
     
     public JanelaPrincipal() {
         initComponents();
@@ -353,6 +354,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             });
         }
     }
+    
+    public void atualizarTextoRelatorio() {
+        txtRelatorios.setText(gerRelatorios.getText());
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private JButton btnAdicionarProduto;
@@ -375,6 +380,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JScrollPane scrollPane2;
     private JSeparator separador1;
     private JTable tabelaProdutos;
-    public JTextArea txtRelatorios;
+    private JTextArea txtRelatorios;
     // End of variables declaration//GEN-END:variables
 }

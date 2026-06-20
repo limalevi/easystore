@@ -6,6 +6,7 @@ package org.levilima.easystore.view;
  */
 import org.levilima.easystore.model.Produto;
 import org.levilima.easystore.control.Loja;
+import org.levilima.easystore.control.Relatorios;
 import java.awt.Color;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -205,6 +206,8 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
         
         loja.addProduto(produto);
         loja.salvarDados();
+        janelaPrincipal.gerRelatorios.gerarAdição(nome, quantidade);
+        janelaPrincipal.atualizarTextoRelatorio();
         janelaPrincipal.atualizarTabela();
         this.dispose();
     }//GEN-LAST:event_btnAdicionarActionPerformed
