@@ -3,8 +3,7 @@ package org.levilima.easystore.view;
 import com.formdev.flatlaf.FlatLightLaf;
 import org.levilima.easystore.model.Produto;
 import org.levilima.easystore.control.Loja;
-import java.util.Date;
-import java.text.SimpleDateFormat;
+import org.levilima.easystore.control.Relatorios;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -37,6 +36,7 @@ import javax.swing.table.DefaultTableModel;
 public class JanelaPrincipal extends javax.swing.JFrame {
     
     private Loja loja = new Loja();
+    private Relatorios relatorios = new Relatorios();
     
     public JanelaPrincipal() {
         initComponents();
@@ -376,6 +376,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JScrollPane scrollPane2;
     private JSeparator separador1;
     private JTable tabelaProdutos;
-    private JTextArea txtRelatorios;
+    public JTextArea txtRelatorios;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,6 +2,7 @@ package org.levilima.easystore.control;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JTextArea;
 
 /**
 *
@@ -18,9 +19,9 @@ public class Relatorios {
         return dataHora + "\n";
     }
     
-    public void gerarRelatorio(String nome, int quantidade) {
+    public String gerarRelatorio(String nome, int quantidade) {
         conteudo += gerarData() + "Adicionado " + quantidade + " " + nome + ".\n\n";
         
-        //txtRelatorios.setText(conteudo);
+        return conteudo;
     }
 }
