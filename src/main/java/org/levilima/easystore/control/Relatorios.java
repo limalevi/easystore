@@ -2,6 +2,9 @@ package org.levilima.easystore.control;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
 *
@@ -32,5 +35,16 @@ public class Relatorios {
     
     public String getText() {
         return this.conteudo;
+    }
+    
+    public void salvarRelatorios() {
+        try {
+            FileWriter arquivo = new FileWriter("relatorios.txt");
+            arquivo.write(conteudo);
+            arquivo.close();
+            System.out.println("Relatórios salvo com sucesso!");
+        } catch(IOException e) {
+            System.err.println("Erro ao salvar os relatórios: " + e.getMessage());
+        }
     }
 }
