@@ -184,6 +184,7 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Produto editado com sucesso!");
                 loja.salvarDados();
                 janelaPrincipal.gerRelatorios.gerarEdicao(produtoAlvo.getCodigo());
+                janelaPrincipal.gerRelatorios.salvarRelatorios();
                 janelaPrincipal.atualizarTextoRelatorio();
                 janelaPrincipal.atualizarTabela();
                 this.dispose();
