@@ -25,4 +25,8 @@ public class Carrinho {
     public void removerItem(int codigoProduto) {
         itens.removeIf(item -> item.getProdutos().getCodigo() == codigoProduto);
     }
+    
+    public ArrayList<ItemCarrinho> getItens() {
+        return itens;
+    }
 }
