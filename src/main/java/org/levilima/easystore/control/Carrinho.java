@@ -30,6 +30,15 @@ public class Carrinho {
         itens.clear();
     }
     
+    public double calcularTotal() {
+        double total = 0;
+        
+        for(ItemCarrinho item : itens)
+            total += item.getSubTotal();
+        
+        return total;
+    }
+    
     public ArrayList<ItemCarrinho> getItens() {
         return itens;
     }
