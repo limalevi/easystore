@@ -26,6 +26,10 @@ public class Carrinho {
         itens.removeIf(item -> item.getProdutos().getCodigo() == codigoProduto);
     }
     
+    public void limparCarrinho() {
+        itens.clear();
+    }
+    
     public ArrayList<ItemCarrinho> getItens() {
         return itens;
     }
