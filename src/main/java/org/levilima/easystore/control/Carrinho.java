@@ -9,5 +9,5 @@ import java.util.ArrayList;
 * @author levi
 */
 public class Carrinho {
-    private ArrayList<Produto> carrinho = new ArrayList<Produto>();
+    private ArrayList<ItemCarrinho> itens = new ArrayList<ItemCarrinho>();
 }
