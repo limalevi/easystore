@@ -13,7 +13,7 @@ public class ItemCarrinho {
         this.quantidadeSelecionada = quantidadeSelecionada;
     }
     
-    public Produto getProdutos() {
+    public Produto getProduto() {
         return this.produto;
     }
     
