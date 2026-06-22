@@ -21,4 +21,8 @@ public class Carrinho {
         
         itens.add(new ItemCarrinho(produto, quantidade));
     }
+    
+    public void removerItem(int codigoProduto) {
+        itens.removeIf(item -> item.getProdutos().getCodigo() == codigoProduto);
+    }
 }
