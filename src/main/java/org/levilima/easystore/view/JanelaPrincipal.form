@@ -54,10 +54,10 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblEasyStore" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="menuSuperior" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblEasyStore" min="-2" max="-2" attributes="0"/>
+                  <Component id="menuSuperior" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="conteudoPrincipal" pref="370" max="32767" attributes="0"/>
@@ -98,6 +98,8 @@
                   <Component id="btnExcluirProduto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="separador1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnAdicionarAoCarrinho" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -107,9 +109,15 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="separador1" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnAdicionarProduto" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnExcluirProduto" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnEditarProduto" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnAdicionarAoCarrinho" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="btnAdicionarProduto" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnEditarProduto" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnExcluirProduto" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -153,6 +161,14 @@
         <Component class="javax.swing.JSeparator" name="separador1">
           <Properties>
             <Property name="orientation" type="int" value="1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAdicionarAoCarrinho">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="/home/levi/NetBeansProjects/EasyStore/img/icons8-adicionar-o-carrinho-de-compras-24.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Adicionar item ao carrinho"/>
           </Properties>
         </Component>
       </SubComponents>
