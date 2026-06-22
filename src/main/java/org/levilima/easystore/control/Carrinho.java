@@ -10,4 +10,15 @@ import java.util.ArrayList;
 */
 public class Carrinho {
     private ArrayList<ItemCarrinho> itens = new ArrayList<ItemCarrinho>();
+    
+    public void adicionarProduto(Produto produto, int quantidade) {
+        for(ItemCarrinho item : itens) {
+            if(item.getProdutos().getCodigo() == produto.getCodigo()) {
+                item.setQuantidadeSelecionada(item.getQuantidadeSelecionada() + quantidade);
+                return;
+            }
+        }
+        
+        itens.add(new ItemCarrinho(produto, quantidade));
+    }
 }
