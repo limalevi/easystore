@@ -35,7 +35,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class JanelaPrincipal extends javax.swing.JFrame {
     
-    private Loja loja = new Loja();
+    private Loja loja = Loja.getInstanciaLoja();
     public Relatorios gerRelatorios = new Relatorios();
     
     public JanelaPrincipal() {
