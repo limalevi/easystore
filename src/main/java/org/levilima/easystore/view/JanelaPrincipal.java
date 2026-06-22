@@ -390,7 +390,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }
     
     public void atualizarTabela() {
-        javax.swing.table.DefaultTableModel tabela = (javax.swing.table.DefaultTableModel) tabelaProdutos.getModel();
+        DefaultTableModel tabela = (DefaultTableModel) tabelaProdutos.getModel();
         
         tabela.setRowCount(0);
         
