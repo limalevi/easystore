@@ -316,7 +316,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnAdicionarProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarProdutoActionPerformed
-        JanelaAdicaoProduto janelaAdicaoProduto = new JanelaAdicaoProduto(loja, this);
+        JanelaAdicaoProduto janelaAdicaoProduto = new JanelaAdicaoProduto(this);
         janelaAdicaoProduto.setLocationRelativeTo(this);
         janelaAdicaoProduto.setVisible(true);
     }//GEN-LAST:event_btnAdicionarProdutoActionPerformed
@@ -339,7 +339,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         }
         
-        JanelaRemocaoProduto janelaRemocaoProduto = new JanelaRemocaoProduto(loja, this, produtoSelecionado);
+        JanelaRemocaoProduto janelaRemocaoProduto = new JanelaRemocaoProduto(this, produtoSelecionado);
         janelaRemocaoProduto.setLocationRelativeTo(this);
         janelaRemocaoProduto.setVisible(true);
     }//GEN-LAST:event_btnExcluirProdutoActionPerformed
@@ -362,7 +362,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         }
         
-        JanelaEdicaoProduto janelaEdicaoProduto = new JanelaEdicaoProduto(loja, this, produtoSelecionado);
+        JanelaEdicaoProduto janelaEdicaoProduto = new JanelaEdicaoProduto(this, produtoSelecionado);
         janelaEdicaoProduto.setLocationRelativeTo(this);
         janelaEdicaoProduto.setVisible(true);
     }//GEN-LAST:event_btnEditarProdutoActionPerformed

@@ -20,11 +20,10 @@ import javax.swing.WindowConstants;
 
 public class JanelaAdicaoProduto extends javax.swing.JFrame {
     
-    private final Loja loja;
+    private Loja loja = Loja.getInstanciaLoja();
     private final JanelaPrincipal janelaPrincipal;
     
-    public JanelaAdicaoProduto(Loja loja, JanelaPrincipal janelaPrincipal) {
-        this.loja = loja;
+    public JanelaAdicaoProduto(JanelaPrincipal janelaPrincipal) {
         this.janelaPrincipal = janelaPrincipal;
         
         initComponents();

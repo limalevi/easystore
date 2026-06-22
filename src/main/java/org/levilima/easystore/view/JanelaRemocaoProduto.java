@@ -20,12 +20,11 @@ import org.levilima.easystore.model.Produto;
  */
 public class JanelaRemocaoProduto extends javax.swing.JFrame {
     
-    private final Loja loja;
+    private Loja loja = Loja.getInstanciaLoja();
     private final JanelaPrincipal janelaPrincipal;
     private Produto produtoAlvo;
     
-    public JanelaRemocaoProduto(Loja loja, JanelaPrincipal janelaPrincipal, Produto produtoAlvo) {
-        this.loja = loja;
+    public JanelaRemocaoProduto(JanelaPrincipal janelaPrincipal, Produto produtoAlvo) {
         this.janelaPrincipal = janelaPrincipal;
         this.produtoAlvo = produtoAlvo;
         
