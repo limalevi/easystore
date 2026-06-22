@@ -112,6 +112,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         btnAdicionarAoCarrinho.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-adicionar-o-carrinho-de-compras-24.png")); // NOI18N
         btnAdicionarAoCarrinho.setToolTipText("Adicionar item ao carrinho");
+        btnAdicionarAoCarrinho.addActionListener(this::btnAdicionarAoCarrinhoActionPerformed);
 
         GroupLayout menuSuperiorLayout = new GroupLayout(menuSuperior);
         menuSuperior.setLayout(menuSuperiorLayout);
@@ -396,6 +397,47 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         cardLayout.show(conteudoPrincipal, "carrinho");
         atualizarTabelaCarrinho();
     }//GEN-LAST:event_btnCarrinhoActionPerformed
+
+    private void btnAdicionarAoCarrinhoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarAoCarrinhoActionPerformed
+        int linhaSelecionada = tabelaProdutos.getSelectedRow();
+        
+        if(linhaSelecionada == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um produto!");
+            return;
+        }
+        
+        int codigo = (int) tabelaProdutos.getValueAt(linhaSelecionada, 0);
+        
+        Produto produtoSelecionado = null;
+        
+        for(Produto produto : loja.getProduto()) {
+            if(codigo == produto.getCodigo()) {
+                produtoSelecionado = produto;
+                break;
+            }
+        }
+        
+        if(produtoSelecionado != null) {
+            String inputQtd = JOptionPane.showInputDialog(this, "Quantas unidades de " + produtoSelecionado.getNome() + " você deseja adicionar?");
+            
+            try {
+                int quantidade = Integer.parseInt(inputQtd);
+                
+                if(quantidade > produtoSelecionado.getQuantidade()) {
+                    JOptionPane.showMessageDialog(this, "Estoque insuficiente! Quantidade disponível: " + produtoSelecionado.getQuantidade());
+                    return;
+                }
+                
+                carrinhoDeCompras.adicionarProduto(produtoSelecionado, quantidade);
+                JOptionPane.showMessageDialog(this, produtoSelecionado.getNome() + " adicionado ao carrinho!");
+            } catch(NumberFormatException e) {
+                if(inputQtd != null){
+                    JOptionPane.showMessageDialog(this, "Digite uma quantidade válida!");
+                    return;
+                }
+            }
+        }
+    }//GEN-LAST:event_btnAdicionarAoCarrinhoActionPerformed
 
     public static void main(String args[]) {
         FlatLightLaf.setup();
