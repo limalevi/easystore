@@ -28,6 +28,8 @@ import javax.swing.LayoutStyle;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
+import org.levilima.easystore.control.Carrinho;
+import org.levilima.easystore.model.ItemCarrinho;
 
 /**
  *
@@ -35,7 +37,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class JanelaPrincipal extends javax.swing.JFrame {
     
-    private Loja loja = Loja.getInstanciaLoja();
+    private Loja loja = new Loja();
+    private Carrinho carrinhoDeCompras = new Carrinho();
     public Relatorios gerRelatorios = new Relatorios();
     
     public JanelaPrincipal() {
@@ -316,7 +319,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnAdicionarProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarProdutoActionPerformed
-        JanelaAdicaoProduto janelaAdicaoProduto = new JanelaAdicaoProduto(this);
+        JanelaAdicaoProduto janelaAdicaoProduto = new JanelaAdicaoProduto(loja, this);
         janelaAdicaoProduto.setLocationRelativeTo(this);
         janelaAdicaoProduto.setVisible(true);
     }//GEN-LAST:event_btnAdicionarProdutoActionPerformed
@@ -339,7 +342,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         }
         
-        JanelaRemocaoProduto janelaRemocaoProduto = new JanelaRemocaoProduto(this, produtoSelecionado);
+        JanelaRemocaoProduto janelaRemocaoProduto = new JanelaRemocaoProduto(loja, this, produtoSelecionado);
         janelaRemocaoProduto.setLocationRelativeTo(this);
         janelaRemocaoProduto.setVisible(true);
     }//GEN-LAST:event_btnExcluirProdutoActionPerformed
@@ -362,7 +365,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         }
         
-        JanelaEdicaoProduto janelaEdicaoProduto = new JanelaEdicaoProduto(this, produtoSelecionado);
+        JanelaEdicaoProduto janelaEdicaoProduto = new JanelaEdicaoProduto(loja, this, produtoSelecionado);
         janelaEdicaoProduto.setLocationRelativeTo(this);
         janelaEdicaoProduto.setVisible(true);
     }//GEN-LAST:event_btnEditarProdutoActionPerformed
@@ -381,6 +384,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         CardLayout cardLayout = (CardLayout) conteudoPrincipal.getLayout();
         
         cardLayout.show(conteudoPrincipal, "carrinho");
+        atualizarTabelaCarrinho();
     }//GEN-LAST:event_btnCarrinhoActionPerformed
 
     public static void main(String args[]) {
@@ -390,7 +394,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }
     
     public void atualizarTabela() {
-        DefaultTableModel tabela = (DefaultTableModel) tabelaProdutos.getModel();
+        javax.swing.table.DefaultTableModel tabela = (javax.swing.table.DefaultTableModel) tabelaProdutos.getModel();
         
         tabela.setRowCount(0);
         
@@ -402,6 +406,21 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 produto.getValidade(),
                 produto.getQuantidade(),
                 produto.getPreco()
+            });
+        }
+    }
+    
+    public void atualizarTabelaCarrinho() {
+        DefaultTableModel modelo = (DefaultTableModel) tabelaCarrinho.getModel();
+        modelo.setRowCount(0);
+        
+        for(ItemCarrinho item : carrinhoDeCompras.getItens()) {
+            modelo.addRow(new Object[]{
+                item.getProduto().getCodigo(),
+                item.getProduto().getNome(),
+                item.getProduto().getPreco(),
+                item.getQuantidadeSelecionada(),
+                item.getSubTotal()
             });
         }
     }

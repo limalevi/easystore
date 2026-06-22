@@ -16,21 +16,9 @@ import java.io.File;
 
 public class Loja implements Serializable {
     private static final long serialVersionUID = 1L;
-    private ArrayList<Produto> produtos;
+    private ArrayList<Produto> produtos = new ArrayList<Produto>();
     public static int CODIGO = 1;
-    private static Loja instancia = null;
     private static final String ARQUIVO_DADOS = "dados_loja.dat";
-    
-    private Loja() {
-        this.produtos = new ArrayList<Produto>();
-    }
-    
-    public static Loja getInstanciaLoja() {
-        if(instancia == null)
-            instancia = new Loja();
-        
-        return instancia;
-    }
     
     public void addProduto(Produto produto) {
         produtos.add(produto);

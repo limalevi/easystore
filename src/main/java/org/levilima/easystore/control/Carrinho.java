@@ -13,7 +13,7 @@ public class Carrinho {
     
     public void adicionarProduto(Produto produto, int quantidade) {
         for(ItemCarrinho item : itens) {
-            if(item.getProdutos().getCodigo() == produto.getCodigo()) {
+            if(item.getProduto().getCodigo() == produto.getCodigo()) {
                 item.setQuantidadeSelecionada(item.getQuantidadeSelecionada() + quantidade);
                 return;
             }
@@ -23,7 +23,7 @@ public class Carrinho {
     }
     
     public void removerItem(int codigoProduto) {
-        itens.removeIf(item -> item.getProdutos().getCodigo() == codigoProduto);
+        itens.removeIf(item -> item.getProduto().getCodigo() == codigoProduto);
     }
     
     public void limparCarrinho() {
@@ -40,6 +40,6 @@ public class Carrinho {
     }
     
     public ArrayList<ItemCarrinho> getItens() {
-        return itens;
+        return this.itens;
     }
 }
