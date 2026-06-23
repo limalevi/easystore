@@ -80,6 +80,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         relatorios = new JPanel();
         scrollPane2 = new JScrollPane();
         txtRelatorios = new JTextArea();
+        btnLimparRelatorios = new JButton();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("EasyStore");
@@ -175,8 +176,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnRelatorios, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSair, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
+                .addComponent(btnSair, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE))
         );
 
         conteudoPrincipal.setPreferredSize(new Dimension(635, 326));
@@ -281,13 +281,21 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         txtRelatorios.setRows(5);
         scrollPane2.setViewportView(txtRelatorios);
 
+        btnLimparRelatorios.setText("Limpar relatórios");
+
         GroupLayout relatoriosLayout = new GroupLayout(relatorios);
         relatorios.setLayout(relatoriosLayout);
         relatoriosLayout.setHorizontalGroup(relatoriosLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(scrollPane2, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+            .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+            .addGroup(GroupLayout.Alignment.TRAILING, relatoriosLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnLimparRelatorios))
         );
         relatoriosLayout.setVerticalGroup(relatoriosLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+            .addGroup(relatoriosLayout.createSequentialGroup()
+                .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnLimparRelatorios, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE))
         );
 
         conteudoPrincipal.add(relatorios, "relatorios");
@@ -514,6 +522,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JButton btnEditarProduto;
     private JButton btnExcluirProduto;
     private JButton btnFinalizarCompra;
+    private JButton btnLimparRelatorios;
     private JButton btnProdutos;
     private JButton btnRelatorios;
     private JButton btnSair;
