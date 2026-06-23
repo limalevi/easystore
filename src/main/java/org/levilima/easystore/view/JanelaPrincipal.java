@@ -76,6 +76,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         carrinho = new JPanel();
         scrollPane3 = new JScrollPane();
         tabelaCarrinho = new JTable();
+        btnFinalizarCompra = new JButton();
         relatorios = new JPanel();
         scrollPane2 = new JScrollPane();
         txtRelatorios = new JTextArea();
@@ -134,12 +135,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
                     .addComponent(separador1, GroupLayout.Alignment.LEADING)
                     .addComponent(btnAdicionarAoCarrinho, GroupLayout.Alignment.LEADING)
-                    .addGroup(menuSuperiorLayout.createSequentialGroup()
-                        .addGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnAdicionarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEditarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnExcluirProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)))
+                    .addComponent(btnAdicionarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnExcluirProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -177,7 +175,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnRelatorios, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSair, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnSair, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
         );
 
         conteudoPrincipal.setPreferredSize(new Dimension(635, 326));
@@ -226,7 +225,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         produtosLayout.setVerticalGroup(produtosLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(GroupLayout.Alignment.TRAILING, produtosLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
+                .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE))
         );
 
         conteudoPrincipal.add(produtos, "produtos");
@@ -257,15 +256,21 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         tabelaCarrinho.getTableHeader().setReorderingAllowed(false);
         scrollPane3.setViewportView(tabelaCarrinho);
 
+        btnFinalizarCompra.setText("Finalizar Compra");
+
         GroupLayout carrinhoLayout = new GroupLayout(carrinho);
         carrinho.setLayout(carrinhoLayout);
         carrinhoLayout.setHorizontalGroup(carrinhoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addComponent(scrollPane3, GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+            .addGroup(carrinhoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnFinalizarCompra, GroupLayout.PREFERRED_SIZE, 151, GroupLayout.PREFERRED_SIZE))
         );
         carrinhoLayout.setVerticalGroup(carrinhoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(GroupLayout.Alignment.TRAILING, carrinhoLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(scrollPane3, GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
+            .addGroup(carrinhoLayout.createSequentialGroup()
+                .addComponent(scrollPane3, GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnFinalizarCompra, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE))
         );
 
         conteudoPrincipal.add(carrinho, "carrinho");
@@ -281,7 +286,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             .addComponent(scrollPane2, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
         );
         relatoriosLayout.setVerticalGroup(relatoriosLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+            .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
         );
 
         conteudoPrincipal.add(relatorios, "relatorios");
@@ -309,7 +314,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(conteudoPrincipal, GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+                        .addComponent(conteudoPrincipal, GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
                         .addGap(7, 7, 7))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(menuLateral, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -488,6 +493,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JButton btnClientes;
     private JButton btnEditarProduto;
     private JButton btnExcluirProduto;
+    private JButton btnFinalizarCompra;
     private JButton btnProdutos;
     private JButton btnRelatorios;
     private JButton btnSair;
