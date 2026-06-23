@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
+import org.levilima.easystore.control.OperacaoAdicao;
 
 public class JanelaAdicaoProduto extends javax.swing.JFrame {
     
@@ -203,8 +204,8 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
         
         loja.addProduto(produto);
         loja.salvarDados();
-        janelaPrincipal.gerRelatorios.gerarAdição(nome, quantidade);
-        janelaPrincipal.gerRelatorios.salvarRelatorios();
+        janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoAdicao(produto.getNome(), produto.getQuantidade()));
+        //janelaPrincipal.gerRelatorios.salvarRelatorios();
         janelaPrincipal.atualizarTextoRelatorio();
         janelaPrincipal.atualizarTabela();
         this.dispose();

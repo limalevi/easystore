@@ -13,6 +13,7 @@ import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import org.levilima.easystore.control.Loja;
 import org.levilima.easystore.model.Produto;
+import org.levilima.easystore.control.OperacaoRemocao;
 
 /**
  *
@@ -104,8 +105,8 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
         if(sucesso) {
             JOptionPane.showMessageDialog(this, "Produto excluído com sucesso!");
             loja.salvarDados();
-            janelaPrincipal.gerRelatorios.gerarRemocao(produtoAlvo.getNome(), produtoAlvo.getQuantidade());
-            janelaPrincipal.gerRelatorios.salvarRelatorios();
+            janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoRemocao(produtoAlvo.getNome()));
+            //janelaPrincipal.gerRelatorios.salvarRelatorios();
             janelaPrincipal.atualizarTextoRelatorio();
             janelaPrincipal.atualizarTabela();
             this.dispose();

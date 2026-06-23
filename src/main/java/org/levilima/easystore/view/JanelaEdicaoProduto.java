@@ -13,6 +13,7 @@ import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
 import org.levilima.easystore.control.Loja;
 import org.levilima.easystore.model.Produto;
+import org.levilima.easystore.control.OperacaoEdicao;
 
 /**
  *
@@ -183,8 +184,8 @@ public class JanelaEdicaoProduto extends javax.swing.JFrame {
             if(sucesso) {
                 JOptionPane.showMessageDialog(this, "Produto editado com sucesso!");
                 loja.salvarDados();
-                janelaPrincipal.gerRelatorios.gerarEdicao(produtoAlvo.getCodigo());
-                janelaPrincipal.gerRelatorios.salvarRelatorios();
+                janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoEdicao(produtoAlvo.getCodigo()));
+                //janelaPrincipal.gerRelatorios.salvarRelatorios();
                 janelaPrincipal.atualizarTextoRelatorio();
                 janelaPrincipal.atualizarTabela();
                 this.dispose();

@@ -3,7 +3,7 @@ package org.levilima.easystore.view;
 import com.formdev.flatlaf.FlatLightLaf;
 import org.levilima.easystore.model.Produto;
 import org.levilima.easystore.control.Loja;
-import org.levilima.easystore.control.Relatorios;
+import org.levilima.easystore.control.GerenciadorRelatorios;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -39,13 +39,13 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     
     private Loja loja = new Loja();
     private Carrinho carrinhoDeCompras = new Carrinho();
-    public Relatorios gerRelatorios = new Relatorios();
+    public GerenciadorRelatorios gerRelatorios = new GerenciadorRelatorios();
     
     public JanelaPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
         loja.carregarDados();
-        gerRelatorios.carregarRelatorios();
+        //gerRelatorios.carregarRelatorios();
         atualizarTextoRelatorio();
         atualizarTabela();
     }
@@ -503,7 +503,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }
     
     public void atualizarTextoRelatorio() {
-        txtRelatorios.setText(gerRelatorios.getText());
+        txtRelatorios.setText(gerRelatorios.getTextoRelatorio());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

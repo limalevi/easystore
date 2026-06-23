@@ -14,6 +14,6 @@ public class OperacaoRemocao extends OperacaoLoja {
     
     @Override
     public String gerarTextoLog() {
-        return getDataHora() + "\n" + nomeProduto + " foi removido do catálogo\n\n";
+        return getDataHora() + "\n" + nomeProduto + " foi removido do catálogo.\n\n";
     }
 }
