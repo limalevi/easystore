@@ -257,6 +257,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         scrollPane3.setViewportView(tabelaCarrinho);
 
         btnFinalizarCompra.setText("Finalizar Compra");
+        btnFinalizarCompra.addActionListener(this::btnFinalizarCompraActionPerformed);
 
         GroupLayout carrinhoLayout = new GroupLayout(carrinho);
         carrinho.setLayout(carrinhoLayout);
@@ -443,6 +444,25 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnAdicionarAoCarrinhoActionPerformed
+
+    private void btnFinalizarCompraActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnFinalizarCompraActionPerformed
+        if(carrinhoDeCompras.getItens().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "O carrinho está vazio!");
+            return;
+        }
+        
+        for(ItemCarrinho item : carrinhoDeCompras.getItens()) {
+            Produto produto = item.getProduto();
+            
+            produto.setQuantidade(produto.getQuantidade() - item.getQuantidadeSelecionada());
+        }
+        
+        loja.salvarDados();
+        JOptionPane.showMessageDialog(this, "Compra finalizada com sucesso!\nTotal: " + carrinhoDeCompras.calcularTotal());
+        carrinhoDeCompras.limparCarrinho();
+        atualizarTabelaCarrinho();
+        atualizarTabela();
+    }//GEN-LAST:event_btnFinalizarCompraActionPerformed
 
     public static void main(String args[]) {
         FlatLightLaf.setup();
