@@ -15,7 +15,7 @@ public class OperacaoAdicao extends OperacaoLoja {
     }
     
     @Override
-    public String GerarTextoLog() {
+    public String gerarTextoLog() {
         return getDataHora() + "\nAdicionado " + quantidade + " unidade(s) de " + nomeProduto + "\n\n";
     }
 }
