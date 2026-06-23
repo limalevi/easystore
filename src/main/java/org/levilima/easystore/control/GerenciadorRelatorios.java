@@ -11,7 +11,7 @@ import java.io.IOException;
 * @author levi
 */
 public class GerenciadorRelatorios {
-    private static final String ARQUIVO = "relatorios.txt";
+    private static final String ARQUIVO = "relatorio.txt";
     private final ArrayList<OperacaoLoja> historico = new ArrayList<OperacaoLoja>();
     private String textoAcumulado = "";
     
@@ -48,7 +48,7 @@ public class GerenciadorRelatorios {
         
         try {
             FileReader arquivo = new FileReader(ARQUIVO);
-            arquivo.readAllLines();
+            textoAcumulado = arquivo.readAllAsString();
             arquivo.close();
             System.out.println("Relatório carregado com sucesso!");
         } catch(IOException e) {

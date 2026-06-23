@@ -106,7 +106,7 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Produto excluído com sucesso!");
             loja.salvarDados();
             janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoRemocao(produtoAlvo.getNome()));
-            //janelaPrincipal.gerRelatorios.salvarRelatorios();
+            janelaPrincipal.gerRelatorios.salvarRelatorio();
             janelaPrincipal.atualizarTextoRelatorio();
             janelaPrincipal.atualizarTabela();
             this.dispose();

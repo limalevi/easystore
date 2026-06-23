@@ -45,7 +45,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         loja.carregarDados();
-        //gerRelatorios.carregarRelatorios();
+        gerRelatorios.carregarRelatorio();
         atualizarTextoRelatorio();
         atualizarTabela();
     }
@@ -475,6 +475,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
     private void btnLimparRelatoriosActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnLimparRelatoriosActionPerformed
         gerRelatorios.limparHistorico();
+        gerRelatorios.salvarRelatorio();
         atualizarTextoRelatorio();
     }//GEN-LAST:event_btnLimparRelatoriosActionPerformed
 
