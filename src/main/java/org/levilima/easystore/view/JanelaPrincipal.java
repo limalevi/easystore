@@ -282,6 +282,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         scrollPane2.setViewportView(txtRelatorios);
 
         btnLimparRelatorios.setText("Limpar relatórios");
+        btnLimparRelatorios.addActionListener(this::btnLimparRelatoriosActionPerformed);
 
         GroupLayout relatoriosLayout = new GroupLayout(relatorios);
         relatorios.setLayout(relatoriosLayout);
@@ -471,6 +472,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         atualizarTabelaCarrinho();
         atualizarTabela();
     }//GEN-LAST:event_btnFinalizarCompraActionPerformed
+
+    private void btnLimparRelatoriosActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnLimparRelatoriosActionPerformed
+        gerRelatorios.limparHistorico();
+        atualizarTextoRelatorio();
+    }//GEN-LAST:event_btnLimparRelatoriosActionPerformed
 
     public static void main(String args[]) {
         FlatLightLaf.setup();
