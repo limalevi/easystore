@@ -457,7 +457,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         }
         
         loja.salvarDados();
-        JOptionPane.showMessageDialog(this, "Compra finalizada com sucesso!\nTotal: " + carrinhoDeCompras.calcularTotal());
+        JOptionPane.showMessageDialog(this, "Compra finalizada com sucesso!\nTotal: R$" + carrinhoDeCompras.calcularTotal());
         carrinhoDeCompras.limparCarrinho();
         atualizarTabelaCarrinho();
         atualizarTabela();
