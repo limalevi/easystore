@@ -43,7 +43,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     
     public JanelaPrincipal() {
         initComponents();
-        this.setLocationRelativeTo(null);
         loja.carregarDados();
         gerRelatorios.carregarRelatorio();
         atualizarTextoRelatorio();
@@ -332,12 +331,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProdutosActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
-        CardLayout cardLayout = (CardLayout) conteudoPrincipal.getLayout();
-        
-        cardLayout.show(conteudoPrincipal, "produtos");
+        ((CardLayout) conteudoPrincipal.getLayout()).show(conteudoPrincipal, "produtos");
     }//GEN-LAST:event_btnProdutosActionPerformed
 
     private void btnSairActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
@@ -346,6 +344,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
     private void btnAdicionarProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarProdutoActionPerformed
         JanelaAdicaoProduto janelaAdicaoProduto = new JanelaAdicaoProduto(loja, this);
+        
         janelaAdicaoProduto.setLocationRelativeTo(this);
         janelaAdicaoProduto.setVisible(true);
     }//GEN-LAST:event_btnAdicionarProdutoActionPerformed
@@ -401,15 +400,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void btnRelatoriosActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnRelatoriosActionPerformed
-        CardLayout cardLayout = (CardLayout) conteudoPrincipal.getLayout();
-        
-        cardLayout.show(conteudoPrincipal, "relatorios");
+        ((CardLayout) conteudoPrincipal.getLayout()).show(conteudoPrincipal, "relatorios");
     }//GEN-LAST:event_btnRelatoriosActionPerformed
 
     private void btnCarrinhoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCarrinhoActionPerformed
-        CardLayout cardLayout = (CardLayout) conteudoPrincipal.getLayout();
-        
-        cardLayout.show(conteudoPrincipal, "carrinho");
+        ((CardLayout) conteudoPrincipal.getLayout()).show(conteudoPrincipal, "carrinho");
         atualizarTabelaCarrinho();
     }//GEN-LAST:event_btnCarrinhoActionPerformed
 
@@ -433,10 +428,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         }
         
         if(produtoSelecionado != null) {
-            String inputQtd = JOptionPane.showInputDialog(this, "Quantas unidades de " + produtoSelecionado.getNome() + " você deseja adicionar?");
-            
             try {
-                int quantidade = Integer.parseInt(inputQtd);
+                int quantidade = Integer.parseInt(JOptionPane.showInputDialog(this, "Quantas unidades de " + produtoSelecionado.getNome() + " você deseja adicionar?"));
                 
                 if(quantidade > produtoSelecionado.getQuantidade()) {
                     JOptionPane.showMessageDialog(this, "Estoque insuficiente! Quantidade disponível: " + produtoSelecionado.getQuantidade());
@@ -446,10 +439,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 carrinhoDeCompras.adicionarProduto(produtoSelecionado, quantidade);
                 JOptionPane.showMessageDialog(this, produtoSelecionado.getNome() + " adicionado ao carrinho!");
             } catch(NumberFormatException e) {
-                if(inputQtd != null){
-                    JOptionPane.showMessageDialog(this, "Digite uma quantidade válida!");
-                    return;
-                }
+                JOptionPane.showMessageDialog(this, "Digite uma quantidade válida!");
             }
         }
     }//GEN-LAST:event_btnAdicionarAoCarrinhoActionPerformed
@@ -486,7 +476,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }
     
     public void atualizarTabela() {
-        javax.swing.table.DefaultTableModel tabela = (javax.swing.table.DefaultTableModel) tabelaProdutos.getModel();
+        DefaultTableModel tabela = (DefaultTableModel) tabelaProdutos.getModel();
         
         tabela.setRowCount(0);
         
@@ -504,6 +494,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     
     public void atualizarTabelaCarrinho() {
         DefaultTableModel modelo = (DefaultTableModel) tabelaCarrinho.getModel();
+        
         modelo.setRowCount(0);
         
         for(ItemCarrinho item : carrinhoDeCompras.getItens()) {
