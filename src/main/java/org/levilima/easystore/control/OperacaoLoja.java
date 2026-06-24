@@ -11,7 +11,7 @@ public abstract class OperacaoLoja {
     private final String dataHora;
     
     public OperacaoLoja() {
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yy HH:mm");
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
         this.dataHora = formato.format(new Date());
     }
     
