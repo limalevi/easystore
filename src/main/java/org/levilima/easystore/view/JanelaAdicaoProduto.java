@@ -166,7 +166,7 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnAdicionarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
@@ -208,7 +208,7 @@ public class JanelaAdicaoProduto extends javax.swing.JFrame {
         janelaPrincipal.gerRelatorios.salvarRelatorio();
         janelaPrincipal.atualizarTextoRelatorio();
         janelaPrincipal.atualizarTabela();
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

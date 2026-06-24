@@ -96,7 +96,7 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnRemoverActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
@@ -109,7 +109,7 @@ public class JanelaRemocaoProduto extends javax.swing.JFrame {
             janelaPrincipal.gerRelatorios.salvarRelatorio();
             janelaPrincipal.atualizarTextoRelatorio();
             janelaPrincipal.atualizarTabela();
-            this.dispose();
+            dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Erro: Produto não encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
