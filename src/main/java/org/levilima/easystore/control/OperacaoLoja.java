@@ -12,11 +12,11 @@ public abstract class OperacaoLoja {
     
     public OperacaoLoja() {
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
-        this.dataHora = formato.format(new Date());
+        dataHora = formato.format(new Date());
     }
     
     public String getDataHora() {
-        return this.dataHora;
+        return dataHora;
     }
     
     public abstract String gerarTextoLog();

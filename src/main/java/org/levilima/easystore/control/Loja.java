@@ -25,7 +25,7 @@ public class Loja implements Serializable {
     }
     
     public ArrayList<Produto> getProduto() {
-        return this.produtos;
+        return produtos;
     }
     
     public boolean removerProduto(int codigo) {
@@ -40,9 +40,11 @@ public class Loja implements Serializable {
                 produto.setValidade(vencimento);
                 produto.setQuantidade(quantidade);
                 produto.setPreco(preco);
+                
                 return true;
             }
         }
+        
         return false;
     }
     
@@ -68,7 +70,7 @@ public class Loja implements Serializable {
         
         try(FileInputStream fis = new FileInputStream(ARQUIVO_DADOS);
             ObjectInputStream ois = new ObjectInputStream(fis)) {
-            this.produtos = (ArrayList<Produto>) ois.readObject();
+            produtos = (ArrayList<Produto>) ois.readObject();
             CODIGO = ois.readInt();
             
             System.out.println("Dados carregados com sucesso!");

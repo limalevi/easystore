@@ -17,16 +17,16 @@ public class GerenciadorRelatorios {
     
     public void registrarOperacao(OperacaoLoja operacao) {
         historico.add(operacao);
-        this.textoAcumulado += operacao.gerarTextoLog();
+        textoAcumulado += operacao.gerarTextoLog();
     }
     
     public String getTextoRelatorio() {
-        return this.textoAcumulado;
+        return textoAcumulado;
     }
     
     public void limparHistorico() {
-        this.historico.clear();
-        this.textoAcumulado = "";
+        historico.clear();
+        textoAcumulado = "";
     }
     
     public void salvarRelatorio() {

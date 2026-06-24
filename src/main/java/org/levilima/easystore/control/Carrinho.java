@@ -40,6 +40,6 @@ public class Carrinho {
     }
     
     public ArrayList<ItemCarrinho> getItens() {
-        return this.itens;
+        return itens;
     }
 }

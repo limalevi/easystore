@@ -14,17 +14,17 @@ public class Produto implements Serializable {
     private String nome, categoria, validade;
     
     public Produto(String nome, String categoria, int quantidade, String validade, double preco) {
-        this.setNome(nome);
-        this.setCategoria(categoria);
-        this.setQuantidade(quantidade);
-        this.setValidade(validade);
-        this.setPreco(preco);
-        this.setCodigo(Loja.CODIGO);
+        setNome(nome);
+        setCategoria(categoria);
+        setQuantidade(quantidade);
+        setValidade(validade);
+        setPreco(preco);
+        setCodigo(Loja.CODIGO);
         ++Loja.CODIGO;
     }
 
     public int getCodigo() {
-        return this.codigo;
+        return codigo;
     }
 
     public void setCodigo(int codigo) {
@@ -32,15 +32,16 @@ public class Produto implements Serializable {
     }
 
     public int getQuantidade() {
-        return this.quantidade;
+        return quantidade;
     }
 
     public void setQuantidade(int quantidade) {
-        if(quantidade > 0) this.quantidade = quantidade;
+        if(quantidade > 0)
+            this.quantidade = quantidade;
     }
 
     public String getNome() {
-        return this.nome;
+        return nome;
     }
 
     public void setNome(String nome) {
@@ -48,7 +49,7 @@ public class Produto implements Serializable {
     }
 
     public String getCategoria() {
-        return this.categoria;
+        return categoria;
     }
 
     public void setCategoria(String categoria) {
@@ -56,7 +57,7 @@ public class Produto implements Serializable {
     }
 
     public String getValidade() {
-        return this.validade;
+        return validade;
     }
 
     public void setValidade(String validade) {
@@ -64,16 +65,11 @@ public class Produto implements Serializable {
     }
     
     public double getPreco() {
-        return this.preco;
+        return preco;
     }
     
     public void setPreco(double preco) {
-        if(preco > 0) this.preco = preco;
-    }
-    
-    public String exibirProduto() {
-        String conteudo = "Código: " + this.codigo + " Nome: " + this.nome + " Categoria: " + this.categoria + " Validade: " + this.validade + " Preço: " + this.preco;
-    
-        return conteudo;
+        if(preco > 0)
+            this.preco = preco;
     }
 }

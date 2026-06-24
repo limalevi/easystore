@@ -5,7 +5,7 @@ package org.levilima.easystore.model;
 * @author levi
 */
 public class ItemCarrinho {
-    private Produto produto;
+    private final Produto produto;
     private int quantidadeSelecionada;
     
     public ItemCarrinho(Produto produto, int quantidadeSelecionada) {
@@ -14,11 +14,11 @@ public class ItemCarrinho {
     }
     
     public Produto getProduto() {
-        return this.produto;
+        return produto;
     }
     
     public int getQuantidadeSelecionada() {
-        return this.quantidadeSelecionada;
+        return quantidadeSelecionada;
     }
     
     public void setQuantidadeSelecionada(int quantidadeSelecionada) {
