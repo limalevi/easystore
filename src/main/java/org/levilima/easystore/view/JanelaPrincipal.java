@@ -392,7 +392,16 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimparRelatoriosActionPerformed
 
     private void btnRemoverDoCarrinhoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnRemoverDoCarrinhoActionPerformed
-        // TODO add your handling code here:
+        int linhaSelecionada = (int) tabelaCarrinho.getSelectedRow();
+        
+        if(linhaSelecionada == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um produto!");
+            return;
+        }
+        
+        carrinhoDeCompras.removerItem((int) tabelaCarrinho.getValueAt(linhaSelecionada, 0));
+        atualizarTabelaCarrinho();
+        atualizarTabela();
     }//GEN-LAST:event_btnRemoverDoCarrinhoActionPerformed
 
     private void btnAdicionarAoCarrinhoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarAoCarrinhoActionPerformed
