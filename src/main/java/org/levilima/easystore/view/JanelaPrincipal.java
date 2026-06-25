@@ -424,6 +424,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         }
 
         if(produtoSelecionado != null) {
+            if(produtoSelecionado.getQuantidade() <= 0) {
+                JOptionPane.showMessageDialog(this, "Este item está esgotado!");
+                return;
+            }
+            
             try {
                 int quantidade = Integer.parseInt(JOptionPane.showInputDialog(this, "Quantas unidades de " + produtoSelecionado.getNome() + " você deseja adicionar?"));
 
