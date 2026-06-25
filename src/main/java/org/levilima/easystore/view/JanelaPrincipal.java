@@ -427,13 +427,14 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             try {
                 int quantidade = Integer.parseInt(JOptionPane.showInputDialog(this, "Quantas unidades de " + produtoSelecionado.getNome() + " você deseja adicionar?"));
 
-                if(quantidade > produtoSelecionado.getQuantidade()) {
+                if(quantidade > 0 && quantidade <= produtoSelecionado.getQuantidade()) {
+                    carrinhoDeCompras.adicionarProduto(produtoSelecionado, quantidade);
+                    JOptionPane.showMessageDialog(this, produtoSelecionado.getNome() + " adicionado ao carrinho!");
+                } else if(quantidade > produtoSelecionado.getQuantidade()) {
                     JOptionPane.showMessageDialog(this, "Estoque insuficiente! Quantidade disponível: " + produtoSelecionado.getQuantidade());
-                    return;
+                } else {
+                    JOptionPane.showMessageDialog(this, "Digite uma quantidade válida.", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
-
-                carrinhoDeCompras.adicionarProduto(produtoSelecionado, quantidade);
-                JOptionPane.showMessageDialog(this, produtoSelecionado.getNome() + " adicionado ao carrinho!");
             } catch(NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "Digite uma quantidade válida!");
             }
