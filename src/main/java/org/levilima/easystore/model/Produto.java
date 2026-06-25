@@ -36,7 +36,7 @@ public class Produto implements Serializable {
     }
 
     public void setQuantidade(int quantidade) {
-        if(quantidade > 0)
+        if(quantidade >= 0)
             this.quantidade = quantidade;
     }
 
