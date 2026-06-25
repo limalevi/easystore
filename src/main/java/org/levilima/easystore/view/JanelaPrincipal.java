@@ -29,6 +29,7 @@ import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
 import org.levilima.easystore.control.Carrinho;
+import org.levilima.easystore.control.OperacaoVenda;
 import org.levilima.easystore.model.ItemCarrinho;
 
 /**
@@ -376,13 +377,16 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             Produto produto = item.getProduto();
             
             produto.setQuantidade(produto.getQuantidade() - item.getQuantidadeSelecionada());
+            gerRelatorios.registrarOperacao(new OperacaoVenda(produto.getNome(), item.getQuantidadeSelecionada()));
         }
         
         loja.salvarDados();
+        gerRelatorios.salvarRelatorio();
         JOptionPane.showMessageDialog(this, "Compra finalizada com sucesso!\nTotal: R$" + carrinhoDeCompras.calcularTotal());
         carrinhoDeCompras.limparCarrinho();
         atualizarTabelaCarrinho();
         atualizarTabela();
+        atualizarTextoRelatorio();
     }//GEN-LAST:event_btnFinalizarCompraActionPerformed
 
     private void btnLimparRelatoriosActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnLimparRelatoriosActionPerformed
