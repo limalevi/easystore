@@ -60,6 +60,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btnExcluirProduto = new JButton();
         separador1 = new JSeparator();
         btnAdicionarAoCarrinho = new JButton();
+        btnRemoverDoCarrinho = new JButton();
         menuLateral = new JPanel();
         btnProdutos = new JButton();
         btnCarrinho = new JButton();
@@ -115,6 +116,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btnAdicionarAoCarrinho.setToolTipText("Adicionar item ao carrinho");
         btnAdicionarAoCarrinho.addActionListener(this::btnAdicionarAoCarrinhoActionPerformed);
 
+        btnRemoverDoCarrinho.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-return-purchase-24.png")); // NOI18N
+        btnRemoverDoCarrinho.setToolTipText("Remover item do carrinho");
+        btnRemoverDoCarrinho.addActionListener(this::btnRemoverDoCarrinhoActionPerformed);
+
         GroupLayout menuSuperiorLayout = new GroupLayout(menuSuperior);
         menuSuperior.setLayout(menuSuperiorLayout);
         menuSuperiorLayout.setHorizontalGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -128,16 +133,22 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addComponent(separador1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAdicionarAoCarrinho)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnRemoverDoCarrinho)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         menuSuperiorLayout.setVerticalGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(menuSuperiorLayout.createSequentialGroup()
                 .addGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
                     .addComponent(separador1, GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAdicionarAoCarrinho, GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAdicionarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEditarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnExcluirProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(menuSuperiorLayout.createSequentialGroup()
+                        .addComponent(btnAdicionarAoCarrinho)
+                        .addGap(0, 0, 0))
+                    .addComponent(btnRemoverDoCarrinho, GroupLayout.Alignment.LEADING)
+                    .addGroup(GroupLayout.Alignment.LEADING, menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnAdicionarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEditarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnExcluirProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -224,7 +235,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         produtosLayout.setVerticalGroup(produtosLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(GroupLayout.Alignment.TRAILING, produtosLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE))
+                .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE))
         );
 
         conteudoPrincipal.add(produtos, "produtos");
@@ -268,7 +279,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         );
         carrinhoLayout.setVerticalGroup(carrinhoLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(carrinhoLayout.createSequentialGroup()
-                .addComponent(scrollPane3, GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                .addComponent(scrollPane3, GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnFinalizarCompra, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE))
         );
@@ -293,7 +304,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         );
         relatoriosLayout.setVerticalGroup(relatoriosLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(relatoriosLayout.createSequentialGroup()
-                .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnLimparRelatorios, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE))
         );
@@ -323,7 +334,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(conteudoPrincipal, GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                        .addComponent(conteudoPrincipal, GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
                         .addGap(7, 7, 7))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(menuLateral, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -342,59 +353,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void btnAdicionarProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarProdutoActionPerformed
-        JanelaAdicaoProduto janelaAdicaoProduto = new JanelaAdicaoProduto(loja, this);
-        
-        janelaAdicaoProduto.setLocationRelativeTo(this);
-        janelaAdicaoProduto.setVisible(true);
-    }//GEN-LAST:event_btnAdicionarProdutoActionPerformed
-
-    private void btnExcluirProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnExcluirProdutoActionPerformed
-        int linhaSelecionada = tabelaProdutos.getSelectedRow();
-        
-        if(linhaSelecionada == -1) {
-            JOptionPane.showMessageDialog(this, "Por favor, selecione um produto!");
-            return;
-        }
-        
-        int codigo = (int) tabelaProdutos.getValueAt(linhaSelecionada, 0);
-        
-        Produto produtoSelecionado = null;
-        for(Produto produto : loja.getProduto()) {
-            if(codigo == produto.getCodigo()) {
-                produtoSelecionado = produto;
-                break;
-            }
-        }
-        
-        JanelaRemocaoProduto janelaRemocaoProduto = new JanelaRemocaoProduto(loja, this, produtoSelecionado);
-        janelaRemocaoProduto.setLocationRelativeTo(this);
-        janelaRemocaoProduto.setVisible(true);
-    }//GEN-LAST:event_btnExcluirProdutoActionPerformed
-
-    private void btnEditarProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnEditarProdutoActionPerformed
-        int linhaSelecionada = tabelaProdutos.getSelectedRow();
-        
-        if(linhaSelecionada == -1) {
-            JOptionPane.showMessageDialog(this, "Por favor, selecione um produto!");
-            return;
-        }
-        
-        int codigo = (int) tabelaProdutos.getValueAt(linhaSelecionada, 0);
-        
-        Produto produtoSelecionado = null;
-        for(Produto produto : loja.getProduto()) {
-            if(codigo == produto.getCodigo()) {
-                produtoSelecionado = produto;
-                break;
-            }
-        }
-        
-        JanelaEdicaoProduto janelaEdicaoProduto = new JanelaEdicaoProduto(loja, this, produtoSelecionado);
-        janelaEdicaoProduto.setLocationRelativeTo(this);
-        janelaEdicaoProduto.setVisible(true);
-    }//GEN-LAST:event_btnEditarProdutoActionPerformed
-
     private void formWindowClosing(WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         loja.salvarDados();
     }//GEN-LAST:event_formWindowClosing
@@ -407,42 +365,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         ((CardLayout) conteudoPrincipal.getLayout()).show(conteudoPrincipal, "carrinho");
         atualizarTabelaCarrinho();
     }//GEN-LAST:event_btnCarrinhoActionPerformed
-
-    private void btnAdicionarAoCarrinhoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarAoCarrinhoActionPerformed
-        int linhaSelecionada = tabelaProdutos.getSelectedRow();
-        
-        if(linhaSelecionada == -1) {
-            JOptionPane.showMessageDialog(this, "Por favor, selecione um produto!");
-            return;
-        }
-        
-        int codigo = (int) tabelaProdutos.getValueAt(linhaSelecionada, 0);
-        
-        Produto produtoSelecionado = null;
-        
-        for(Produto produto : loja.getProduto()) {
-            if(codigo == produto.getCodigo()) {
-                produtoSelecionado = produto;
-                break;
-            }
-        }
-        
-        if(produtoSelecionado != null) {
-            try {
-                int quantidade = Integer.parseInt(JOptionPane.showInputDialog(this, "Quantas unidades de " + produtoSelecionado.getNome() + " você deseja adicionar?"));
-                
-                if(quantidade > produtoSelecionado.getQuantidade()) {
-                    JOptionPane.showMessageDialog(this, "Estoque insuficiente! Quantidade disponível: " + produtoSelecionado.getQuantidade());
-                    return;
-                }
-                
-                carrinhoDeCompras.adicionarProduto(produtoSelecionado, quantidade);
-                JOptionPane.showMessageDialog(this, produtoSelecionado.getNome() + " adicionado ao carrinho!");
-            } catch(NumberFormatException e) {
-                JOptionPane.showMessageDialog(this, "Digite uma quantidade válida!");
-            }
-        }
-    }//GEN-LAST:event_btnAdicionarAoCarrinhoActionPerformed
 
     private void btnFinalizarCompraActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnFinalizarCompraActionPerformed
         if(carrinhoDeCompras.getItens().isEmpty()) {
@@ -468,6 +390,99 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         gerRelatorios.salvarRelatorio();
         atualizarTextoRelatorio();
     }//GEN-LAST:event_btnLimparRelatoriosActionPerformed
+
+    private void btnRemoverDoCarrinhoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnRemoverDoCarrinhoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRemoverDoCarrinhoActionPerformed
+
+    private void btnAdicionarAoCarrinhoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarAoCarrinhoActionPerformed
+        int linhaSelecionada = tabelaProdutos.getSelectedRow();
+
+        if(linhaSelecionada == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um produto!");
+            return;
+        }
+
+        int codigo = (int) tabelaProdutos.getValueAt(linhaSelecionada, 0);
+
+        Produto produtoSelecionado = null;
+
+        for(Produto produto : loja.getProduto()) {
+            if(codigo == produto.getCodigo()) {
+                produtoSelecionado = produto;
+                break;
+            }
+        }
+
+        if(produtoSelecionado != null) {
+            try {
+                int quantidade = Integer.parseInt(JOptionPane.showInputDialog(this, "Quantas unidades de " + produtoSelecionado.getNome() + " você deseja adicionar?"));
+
+                if(quantidade > produtoSelecionado.getQuantidade()) {
+                    JOptionPane.showMessageDialog(this, "Estoque insuficiente! Quantidade disponível: " + produtoSelecionado.getQuantidade());
+                    return;
+                }
+
+                carrinhoDeCompras.adicionarProduto(produtoSelecionado, quantidade);
+                JOptionPane.showMessageDialog(this, produtoSelecionado.getNome() + " adicionado ao carrinho!");
+            } catch(NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Digite uma quantidade válida!");
+            }
+        }
+    }//GEN-LAST:event_btnAdicionarAoCarrinhoActionPerformed
+
+    private void btnExcluirProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnExcluirProdutoActionPerformed
+        int linhaSelecionada = tabelaProdutos.getSelectedRow();
+
+        if(linhaSelecionada == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um produto!");
+            return;
+        }
+
+        int codigo = (int) tabelaProdutos.getValueAt(linhaSelecionada, 0);
+
+        Produto produtoSelecionado = null;
+        for(Produto produto : loja.getProduto()) {
+            if(codigo == produto.getCodigo()) {
+                produtoSelecionado = produto;
+                break;
+            }
+        }
+
+        JanelaRemocaoProduto janelaRemocaoProduto = new JanelaRemocaoProduto(loja, this, produtoSelecionado);
+        janelaRemocaoProduto.setLocationRelativeTo(this);
+        janelaRemocaoProduto.setVisible(true);
+    }//GEN-LAST:event_btnExcluirProdutoActionPerformed
+
+    private void btnEditarProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnEditarProdutoActionPerformed
+        int linhaSelecionada = tabelaProdutos.getSelectedRow();
+
+        if(linhaSelecionada == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um produto!");
+            return;
+        }
+
+        int codigo = (int) tabelaProdutos.getValueAt(linhaSelecionada, 0);
+
+        Produto produtoSelecionado = null;
+        for(Produto produto : loja.getProduto()) {
+            if(codigo == produto.getCodigo()) {
+                produtoSelecionado = produto;
+                break;
+            }
+        }
+
+        JanelaEdicaoProduto janelaEdicaoProduto = new JanelaEdicaoProduto(loja, this, produtoSelecionado);
+        janelaEdicaoProduto.setLocationRelativeTo(this);
+        janelaEdicaoProduto.setVisible(true);
+    }//GEN-LAST:event_btnEditarProdutoActionPerformed
+
+    private void btnAdicionarProdutoActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAdicionarProdutoActionPerformed
+        JanelaAdicaoProduto janelaAdicaoProduto = new JanelaAdicaoProduto(loja, this);
+
+        janelaAdicaoProduto.setLocationRelativeTo(this);
+        janelaAdicaoProduto.setVisible(true);
+    }//GEN-LAST:event_btnAdicionarProdutoActionPerformed
 
     public static void main(String args[]) {
         FlatLightLaf.setup();
@@ -523,6 +538,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JButton btnLimparRelatorios;
     private JButton btnProdutos;
     private JButton btnRelatorios;
+    private JButton btnRemoverDoCarrinho;
     private JButton btnSair;
     private JPanel carrinho;
     private JPanel conteudoPrincipal;
