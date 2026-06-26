@@ -144,6 +144,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         btnRemoverFuncionario.setIcon(new ImageIcon(getClass().getResource("/img/icons8-remover-usuário-masculino-24.png"))); // NOI18N
         btnRemoverFuncionario.setToolTipText("Remover funcionário");
+        btnRemoverFuncionario.addActionListener(this::btnRemoverFuncionarioActionPerformed);
 
         GroupLayout menuSuperiorLayout = new GroupLayout(menuSuperior);
         menuSuperior.setLayout(menuSuperiorLayout);
@@ -178,9 +179,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                             .addComponent(btnAdicionarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnEditarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnExcluirProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(menuSuperiorLayout.createSequentialGroup()
-                            .addComponent(btnEditarFuncionario)
-                            .addGap(0, 0, 0))
+                        .addComponent(btnEditarFuncionario)
                         .addComponent(btnRemoverFuncionario, GroupLayout.Alignment.LEADING))
                     .addComponent(separador1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                     .addComponent(separador2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
@@ -594,6 +593,29 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         janela.setLocationRelativeTo(this);
         janela.setVisible(true);
     }//GEN-LAST:event_btnCadastrarFuncionarioActionPerformed
+
+    private void btnRemoverFuncionarioActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnRemoverFuncionarioActionPerformed
+        int linhaSelecionada = tabelaFuncionarios.getSelectedRow();
+
+        if(linhaSelecionada == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um funcionário!");
+            return;
+        }
+
+        int id = (int) tabelaFuncionarios.getValueAt(linhaSelecionada, 0);
+
+        Funcionario funcionarioSelecionado = null;
+        for(Funcionario funcionario : gerFuncionarios.getFuncionario()) {
+            if(id == funcionario.getId()) {
+                funcionarioSelecionado = funcionario;
+                break;
+            }
+        }
+
+        JanelaRemocaoFuncionario janela = new JanelaRemocaoFuncionario(gerFuncionarios, this, funcionarioSelecionado);
+        janela.setLocationRelativeTo(this);
+        janela.setVisible(true);
+    }//GEN-LAST:event_btnRemoverFuncionarioActionPerformed
 
     public static void main(String args[]) {
         FlatLightLaf.setup();
