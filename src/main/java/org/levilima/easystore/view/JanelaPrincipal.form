@@ -60,7 +60,7 @@
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="conteudoPrincipal" pref="304" max="32767" attributes="0"/>
+                      <Component id="conteudoPrincipal" pref="268" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -108,6 +108,8 @@
                   <Component id="btnCadastrarFuncionario" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnEditarFuncionario" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnRemoverFuncionario" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -117,21 +119,22 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="btnCadastrarFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                               <Component id="btnAdicionarProduto" alignment="0" max="32767" attributes="0"/>
                               <Component id="btnEditarProduto" alignment="0" max="32767" attributes="0"/>
                               <Component id="btnExcluirProduto" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="btnEditarFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="btnEditarFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="btnRemoverFuncionario" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="separador1" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="separador2" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="btnRemoverDoCarrinho" min="-2" max="-2" attributes="0"/>
                       <Component id="btnAdicionarAoCarrinho" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCadastrarFuncionario" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -218,6 +221,14 @@
               <Image iconType="2" name="/home/levi/NetBeansProjects/EasyStore/img/icons8-editar-usu&#xe1;rio-masculino-24.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Editar dados do funcion&#xe1;rio"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnRemoverFuncionario">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="/home/levi/NetBeansProjects/EasyStore/img/icons8-remover-usu&#xe1;rio-masculino-24.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Remover funcion&#xe1;rio"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -349,7 +360,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                      <Component id="scrollPane" pref="304" max="32767" attributes="0"/>
+                      <Component id="scrollPane" pref="268" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -437,7 +448,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="scrollPane3" pref="258" max="32767" attributes="0"/>
+                      <Component id="scrollPane3" pref="222" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnFinalizarCompra" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
@@ -531,7 +542,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                      <Component id="scrollPane4" pref="304" max="32767" attributes="0"/>
+                      <Component id="scrollPane4" pref="268" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -613,7 +624,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="scrollPane2" pref="258" max="32767" attributes="0"/>
+                      <Component id="scrollPane2" pref="222" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnLimparRelatorios" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
