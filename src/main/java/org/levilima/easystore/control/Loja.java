@@ -4,7 +4,7 @@ package org.levilima.easystore.control;
  *
  * @author levi
  */
-import java.util.ArrayList;
+import java.util.LinkedList;
 import org.levilima.easystore.model.Produto;
 import java.io.Serializable;
 import java.io.FileInputStream;
@@ -16,7 +16,7 @@ import java.io.File;
 
 public class Loja implements Serializable {
     private static final long serialVersionUID = 1L;
-    private ArrayList<Produto> produtos = new ArrayList<Produto>();
+    private LinkedList<Produto> produtos = new LinkedList<Produto>();
     public static int CODIGO = 1;
     private static final String ARQUIVO_DADOS = "dados_loja.dat";
     
@@ -24,7 +24,7 @@ public class Loja implements Serializable {
         produtos.add(produto);
     }
     
-    public ArrayList<Produto> getProduto() {
+    public LinkedList<Produto> getProduto() {
         return produtos;
     }
     
@@ -70,7 +70,7 @@ public class Loja implements Serializable {
         
         try(FileInputStream fis = new FileInputStream(ARQUIVO_DADOS);
             ObjectInputStream ois = new ObjectInputStream(fis)) {
-            produtos = (ArrayList<Produto>) ois.readObject();
+            produtos = (LinkedList<Produto>) ois.readObject();
             CODIGO = ois.readInt();
             
             System.out.println("Dados carregados com sucesso!");
