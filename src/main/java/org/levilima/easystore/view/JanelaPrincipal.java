@@ -137,6 +137,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         btnCadastrarFuncionario.setIcon(new ImageIcon(getClass().getResource("/img/icons8-adicionar-usuário-masculino-24.png"))); // NOI18N
         btnCadastrarFuncionario.setToolTipText("Cadastrar um funcionário");
+        btnCadastrarFuncionario.addActionListener(this::btnCadastrarFuncionarioActionPerformed);
 
         btnEditarFuncionario.setIcon(new ImageIcon(getClass().getResource("/img/icons8-editar-usuário-masculino-24.png"))); // NOI18N
         btnEditarFuncionario.setToolTipText("Editar dados do funcionário");
@@ -586,6 +587,13 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private void btnFuncionariosActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnFuncionariosActionPerformed
         ((CardLayout) conteudoPrincipal.getLayout()).show(conteudoPrincipal, "funcionarios");
     }//GEN-LAST:event_btnFuncionariosActionPerformed
+
+    private void btnCadastrarFuncionarioActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCadastrarFuncionarioActionPerformed
+        JanelaCadastroFuncionario janela = new JanelaCadastroFuncionario(gerFuncionarios, this);
+        
+        janela.setLocationRelativeTo(this);
+        janela.setVisible(true);
+    }//GEN-LAST:event_btnCadastrarFuncionarioActionPerformed
 
     public static void main(String args[]) {
         FlatLightLaf.setup();

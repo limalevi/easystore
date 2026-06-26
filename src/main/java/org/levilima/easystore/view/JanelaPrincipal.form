@@ -214,6 +214,9 @@
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Cadastrar um funcion&#xe1;rio"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarFuncionarioActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnEditarFuncionario">
           <Properties>
