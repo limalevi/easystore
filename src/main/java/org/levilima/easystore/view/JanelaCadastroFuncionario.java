@@ -1,0 +1,219 @@
+package org.levilima.easystore.view;
+
+/**
+ *
+ * @author levi
+ */
+import org.levilima.easystore.model.Produto;
+import org.levilima.easystore.control.Loja;
+import java.awt.Color;
+import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle;
+import javax.swing.WindowConstants;
+import org.levilima.easystore.control.OperacaoAdicao;
+
+public class JanelaCadastroFuncionario extends javax.swing.JFrame {
+    
+    private final Loja loja;
+    private final JanelaPrincipal janelaPrincipal;
+    
+    public JanelaCadastroFuncionario(Loja loja, JanelaPrincipal janelaPrincipal) {
+        this.loja = loja;
+        this.janelaPrincipal = janelaPrincipal;
+        
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        dica = new JLabel();
+        container = new JPanel();
+        lblNome = new JLabel();
+        txtNome = new JTextField();
+        lblEmail = new JLabel();
+        txtEmail = new JTextField();
+        lblCpf = new JLabel();
+        txtCpf = new JTextField();
+        lblTelefone = new JLabel();
+        txtTelefone = new JTextField();
+        botoes = new JPanel();
+        btnCancelar = new JButton();
+        btnCadastrar = new JButton();
+
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de funcionário");
+        setBounds(new Rectangle(300, 180, 0, 0));
+        setResizable(false);
+
+        dica.setText("Campos de preenchimento obrigatório (*)");
+
+        lblNome.setText("Nome*");
+
+        lblEmail.setText("E-Mail*");
+
+        lblCpf.setText("CPF*");
+
+        lblTelefone.setText("Telefone*");
+
+        GroupLayout containerLayout = new GroupLayout(container);
+        container.setLayout(containerLayout);
+        containerLayout.setHorizontalGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(GroupLayout.Alignment.TRAILING, containerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCpf, GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                    .addComponent(lblEmail, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblNome, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblTelefone, GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(txtEmail, GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtCpf)
+                    .addComponent(txtNome)
+                    .addGroup(GroupLayout.Alignment.TRAILING, containerLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(txtTelefone, GroupLayout.PREFERRED_SIZE, 539, GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        containerLayout.setVerticalGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(containerLayout.createSequentialGroup()
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNome)
+                    .addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEmail))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCpf)
+                    .addComponent(txtCpf, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(containerLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTelefone)
+                    .addComponent(txtTelefone, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        btnCancelar.setBackground(new Color(255, 0, 0));
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(this::btnCancelarActionPerformed);
+
+        btnCadastrar.setText("Cadastrar");
+        btnCadastrar.addActionListener(this::btnCadastrarActionPerformed);
+
+        GroupLayout botoesLayout = new GroupLayout(botoes);
+        botoes.setLayout(botoesLayout);
+        botoesLayout.setHorizontalGroup(botoesLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(botoesLayout.createSequentialGroup()
+                .addComponent(btnCancelar, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE))
+        );
+        botoesLayout.setVerticalGroup(botoesLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(botoesLayout.createSequentialGroup()
+                .addGroup(botoesLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelar, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0))
+        );
+
+        GroupLayout layout = new GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addComponent(container, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addComponent(dica))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(botoes, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dica)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(container, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botoes, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnCadastrarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        String nome = txtNome.getText();
+        String categoria = txtEmail.getText();
+        String vencimento = txtCpf.getText();
+        int quantidade = 0;
+        double preco = 0;
+        
+        if(nome.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Insira um nome para o produto.");
+            return;
+        }
+        
+        if(vencimento.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Insira uma data de validade para o produto.");
+            return;
+        }
+        
+        try {
+            quantidade = Integer.parseInt(txtTelefone.getText());
+        } catch(NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Insira uma quantidade válida.");
+            return;
+        }
+
+        try {
+            preco = Double.parseDouble(txtPreco.getText());
+        } catch(NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Insira um preço válido.");
+            return;
+        }
+        
+        Produto produto = new Produto(nome, categoria, quantidade, vencimento, preco);
+        
+        loja.addProduto(produto);
+        loja.salvarDados();
+        janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoAdicao(produto.getNome(), produto.getQuantidade()));
+        janelaPrincipal.gerRelatorios.salvarRelatorio();
+        janelaPrincipal.atualizarTextoRelatorio();
+        janelaPrincipal.atualizarTabela();
+        dispose();
+    }//GEN-LAST:event_btnCadastrarActionPerformed
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private JPanel botoes;
+    private JButton btnCadastrar;
+    private JButton btnCancelar;
+    private JPanel container;
+    private JLabel dica;
+    private JLabel lblCpf;
+    private JLabel lblEmail;
+    private JLabel lblNome;
+    private JLabel lblTelefone;
+    private JTextField txtCpf;
+    private JTextField txtEmail;
+    private JTextField txtNome;
+    private JTextField txtTelefone;
+    // End of variables declaration//GEN-END:variables
+}
