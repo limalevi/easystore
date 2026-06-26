@@ -47,4 +47,35 @@ public class Funcionarios {
     public LinkedList<Funcionario> getFuncionario() {
         return funcionarios;
     }
+    
+    public void salvarDados() {
+        try(FileOutputStream fos = new FileOutputStream(ARQUIVO_DADOS);
+            ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+
+            oos.writeObject(funcionarios);
+            oos.writeInt(ID);
+            
+            System.out.println("Lista de funcionários salvo com sucesso!");
+        } catch(IOException e) {
+            System.err.println("Erro ao salvar a lista de funcionários: " + e.getMessage());
+        }
+    }
+    
+    @SuppressWarnings("unchecked")
+    public void carregarDados() {
+        File arquivo = new File(ARQUIVO_DADOS);
+        
+        if(!arquivo.exists())
+            return;
+        
+        try(FileInputStream fis = new FileInputStream(ARQUIVO_DADOS);
+            ObjectInputStream ois = new ObjectInputStream(fis)) {
+            funcionarios = (LinkedList<Funcionario>) ois.readObject();
+            ID = ois.readInt();
+            
+            System.out.println("Lista de funcionários carregado com sucesso!");
+        } catch(IOException | ClassNotFoundException e) {
+            System.err.println("Erro ao carregar a lista de funcionários: " + e.getMessage());
+        }
+    }
 }
