@@ -2,14 +2,14 @@ package org.levilima.easystore.control;
 
 import org.levilima.easystore.model.Produto;
 import org.levilima.easystore.model.ItemCarrinho;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
 *
 * @author levi
 */
 public class Carrinho {
-    private ArrayList<ItemCarrinho> itens = new ArrayList<ItemCarrinho>();
+    private LinkedList<ItemCarrinho> itens = new LinkedList<ItemCarrinho>();
     
     public void adicionarProduto(Produto produto, int quantidade) {
         for(ItemCarrinho item : itens) {
@@ -39,7 +39,7 @@ public class Carrinho {
         return total;
     }
     
-    public ArrayList<ItemCarrinho> getItens() {
+    public LinkedList<ItemCarrinho> getItens() {
         return itens;
     }
 }
