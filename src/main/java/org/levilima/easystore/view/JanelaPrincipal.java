@@ -142,14 +142,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             .addGroup(menuSuperiorLayout.createSequentialGroup()
                 .addGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
                     .addComponent(separador1, GroupLayout.Alignment.LEADING)
-                    .addGroup(menuSuperiorLayout.createSequentialGroup()
-                        .addComponent(btnAdicionarAoCarrinho)
-                        .addGap(0, 0, 0))
+                    .addComponent(btnAdicionarAoCarrinho)
                     .addComponent(btnRemoverDoCarrinho, GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.LEADING, menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnAdicionarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEditarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnExcluirProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnAdicionarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnExcluirProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -161,7 +158,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         btnClientes.setText("Clientes");
 
-        btnRelatorios.setText("Relatórios");
+        btnRelatorios.setText("Logs");
         btnRelatorios.addActionListener(this::btnRelatoriosActionPerformed);
 
         btnSair.setBackground(new Color(255, 0, 0));
