@@ -160,6 +160,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btnCarrinho.addActionListener(this::btnCarrinhoActionPerformed);
 
         btnFuncionarios.setText("Funcionários");
+        btnFuncionarios.addActionListener(this::btnFuncionariosActionPerformed);
 
         btnRelatorios.setText("Logs");
         btnRelatorios.addActionListener(this::btnRelatoriosActionPerformed);
@@ -545,6 +546,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         janelaAdicaoProduto.setLocationRelativeTo(this);
         janelaAdicaoProduto.setVisible(true);
     }//GEN-LAST:event_btnAdicionarProdutoActionPerformed
+
+    private void btnFuncionariosActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnFuncionariosActionPerformed
+        ((CardLayout) conteudoPrincipal.getLayout()).show(conteudoPrincipal, "funcionarios");
+    }//GEN-LAST:event_btnFuncionariosActionPerformed
 
     public static void main(String args[]) {
         FlatLightLaf.setup();
