@@ -4,8 +4,6 @@ package org.levilima.easystore.view;
  *
  * @author levi
  */
-import org.levilima.easystore.model.Produto;
-import org.levilima.easystore.control.Loja;
 import java.awt.Color;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -17,15 +15,16 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
-import org.levilima.easystore.control.OperacaoAdicao;
+import org.levilima.easystore.control.Funcionarios;
+import org.levilima.easystore.model.Funcionario;
 
 public class JanelaCadastroFuncionario extends javax.swing.JFrame {
     
-    private final Loja loja;
+    private final Funcionarios gerFuncionarios;
     private final JanelaPrincipal janelaPrincipal;
     
-    public JanelaCadastroFuncionario(Loja loja, JanelaPrincipal janelaPrincipal) {
-        this.loja = loja;
+    public JanelaCadastroFuncionario(Funcionarios gerFuncionarios, JanelaPrincipal janelaPrincipal) {
+        this.gerFuncionarios = gerFuncionarios;
         this.janelaPrincipal = janelaPrincipal;
         
         initComponents();
@@ -161,43 +160,41 @@ public class JanelaCadastroFuncionario extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         String nome = txtNome.getText();
-        String categoria = txtEmail.getText();
-        String vencimento = txtCpf.getText();
-        int quantidade = 0;
-        double preco = 0;
+        String email = txtEmail.getText();
+        int cpf, telefone;
         
         if(nome.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Insira um nome para o produto.");
+            JOptionPane.showMessageDialog(null, "Insira o nome do funcionário!");
             return;
         }
         
-        if(vencimento.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Insira uma data de validade para o produto.");
+        if(email.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Insira o e-mail do funcionário!");
             return;
         }
         
         try {
-            quantidade = Integer.parseInt(txtTelefone.getText());
+            cpf = Integer.parseInt(txtCpf.getText());
         } catch(NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Insira uma quantidade válida.");
+            JOptionPane.showMessageDialog(null, "Insira o CPF do funcionário!");
             return;
         }
 
         try {
-            preco = Double.parseDouble(txtPreco.getText());
+            telefone = Integer.parseInt(txtTelefone.getText());
         } catch(NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Insira um preço válido.");
+            JOptionPane.showMessageDialog(null, "Insira o Nº de telefone do funcionário!");
             return;
         }
         
-        Produto produto = new Produto(nome, categoria, quantidade, vencimento, preco);
+        Funcionario funcionario = new Funcionario(nome, email, cpf, telefone);
         
-        loja.addProduto(produto);
-        loja.salvarDados();
-        janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoAdicao(produto.getNome(), produto.getQuantidade()));
-        janelaPrincipal.gerRelatorios.salvarRelatorio();
-        janelaPrincipal.atualizarTextoRelatorio();
-        janelaPrincipal.atualizarTabela();
+        gerFuncionarios.addFuncionario(funcionario);
+        gerFuncionarios.salvarDados();
+        //janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoAdicao(produto.getNome(), produto.getQuantidade()));
+        //janelaPrincipal.gerRelatorios.salvarRelatorio();
+        //janelaPrincipal.atualizarTextoRelatorio();
+        janelaPrincipal.atualizarTabelaFuncionarios();
         dispose();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
