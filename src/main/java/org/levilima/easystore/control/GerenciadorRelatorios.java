@@ -1,6 +1,6 @@
 package org.levilima.easystore.control;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.FileReader;
@@ -12,7 +12,7 @@ import java.io.IOException;
 */
 public class GerenciadorRelatorios {
     private static final String ARQUIVO = "relatorio.txt";
-    private final ArrayList<OperacaoLoja> historico = new ArrayList<OperacaoLoja>();
+    private final LinkedList<OperacaoLoja> historico = new LinkedList<OperacaoLoja>();
     private String textoAcumulado = "";
     
     public void registrarOperacao(OperacaoLoja operacao) {
