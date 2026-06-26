@@ -19,4 +19,12 @@ public class Funcionarios {
     private LinkedList<Funcionario> funcionarios = new LinkedList<Funcionario>();
     public static int ID = 1;
     private static final String ARQUIVO_DADOS = "funcionarios.dat";
+    
+    public void addFuncionario(Funcionario funcionario) {
+        funcionarios.add(funcionario);
+    }
+    
+    public boolean removerFuncionario(int id) {
+        return funcionarios.removeIf(funcionario -> funcionario.getId() == id);
+    }
 }
