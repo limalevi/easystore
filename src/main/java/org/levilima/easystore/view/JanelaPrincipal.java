@@ -78,6 +78,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         scrollPane3 = new JScrollPane();
         tabelaCarrinho = new JTable();
         btnFinalizarCompra = new JButton();
+        funcionarios = new JPanel();
+        scrollPane4 = new JScrollPane();
+        tabelaFuncionarios = new JTable();
         relatorios = new JPanel();
         scrollPane2 = new JScrollPane();
         txtRelatorios = new JTextArea();
@@ -224,6 +227,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         });
         tabelaProdutos.getTableHeader().setReorderingAllowed(false);
         scrollPane.setViewportView(tabelaProdutos);
+        if (tabelaProdutos.getColumnModel().getColumnCount() > 0) {
+            tabelaProdutos.getColumnModel().getColumn(5).setResizable(false);
+            tabelaProdutos.getColumnModel().getColumn(5).setHeaderValue("Preço");
+        }
 
         GroupLayout produtosLayout = new GroupLayout(produtos);
         produtos.setLayout(produtosLayout);
@@ -283,6 +290,45 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         );
 
         conteudoPrincipal.add(carrinho, "carrinho");
+
+        tabelaFuncionarios.setModel(new DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nome", "E-Mail", "CPF", "Nº de Telefone"
+            }
+        ) {
+            Class[] types = new Class [] {
+                Integer.class, String.class, String.class, Integer.class, Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabelaFuncionarios.getTableHeader().setReorderingAllowed(false);
+        scrollPane4.setViewportView(tabelaFuncionarios);
+
+        GroupLayout funcionariosLayout = new GroupLayout(funcionarios);
+        funcionarios.setLayout(funcionariosLayout);
+        funcionariosLayout.setHorizontalGroup(funcionariosLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addComponent(scrollPane4, GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+        );
+        funcionariosLayout.setVerticalGroup(funcionariosLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(GroupLayout.Alignment.TRAILING, funcionariosLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(scrollPane4, GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE))
+        );
+
+        conteudoPrincipal.add(funcionarios, "funcionarios");
 
         txtRelatorios.setEditable(false);
         txtRelatorios.setColumns(20);
@@ -558,6 +604,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JButton btnSair;
     private JPanel carrinho;
     private JPanel conteudoPrincipal;
+    private JPanel funcionarios;
     private JLabel lblBoasVindas;
     private JLabel lblEasyStore;
     private JPanel menuLateral;
@@ -568,8 +615,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JScrollPane scrollPane;
     private JScrollPane scrollPane2;
     private JScrollPane scrollPane3;
+    private JScrollPane scrollPane4;
     private JSeparator separador1;
     private JTable tabelaCarrinho;
+    private JTable tabelaFuncionarios;
     private JTable tabelaProdutos;
     private JTextArea txtRelatorios;
     // End of variables declaration//GEN-END:variables
