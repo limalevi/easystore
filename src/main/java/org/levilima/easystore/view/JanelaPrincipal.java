@@ -141,6 +141,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         btnEditarFuncionario.setIcon(new ImageIcon(getClass().getResource("/img/icons8-editar-usuário-masculino-24.png"))); // NOI18N
         btnEditarFuncionario.setToolTipText("Editar dados do funcionário");
+        btnEditarFuncionario.addActionListener(this::btnEditarFuncionarioActionPerformed);
 
         btnRemoverFuncionario.setIcon(new ImageIcon(getClass().getResource("/img/icons8-remover-usuário-masculino-24.png"))); // NOI18N
         btnRemoverFuncionario.setToolTipText("Remover funcionário");
@@ -616,6 +617,29 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         janela.setLocationRelativeTo(this);
         janela.setVisible(true);
     }//GEN-LAST:event_btnRemoverFuncionarioActionPerformed
+
+    private void btnEditarFuncionarioActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnEditarFuncionarioActionPerformed
+        int linhaSelecionada = tabelaFuncionarios.getSelectedRow();
+
+        if(linhaSelecionada == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um funcionário!");
+            return;
+        }
+
+        int id = (int) tabelaFuncionarios.getValueAt(linhaSelecionada, 0);
+
+        Funcionario funcionarioSelecionado = null;
+        for(Funcionario funcionario : gerFuncionarios.getFuncionario()) {
+            if(id == funcionario.getId()) {
+                funcionarioSelecionado = funcionario;
+                break;
+            }
+        }
+
+        JanelaEdicaoFuncionario janela = new JanelaEdicaoFuncionario(gerFuncionarios, this, funcionarioSelecionado);
+        janela.setLocationRelativeTo(this);
+        janela.setVisible(true);
+    }//GEN-LAST:event_btnEditarFuncionarioActionPerformed
 
     public static void main(String args[]) {
         FlatLightLaf.setup();
