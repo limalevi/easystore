@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.File;
+import org.levilima.easystore.model.Funcionario;
 
 /**
 *
@@ -16,6 +17,6 @@ import java.io.File;
 public class Funcionarios {
     private static final long serialVersionUID = 1L;
     private LinkedList<Funcionario> funcionarios = new LinkedList<Funcionario>();
-    public static int CODIGO = 1;
+    public static int ID = 1;
     private static final String ARQUIVO_DADOS = "funcionarios.dat";
 }
