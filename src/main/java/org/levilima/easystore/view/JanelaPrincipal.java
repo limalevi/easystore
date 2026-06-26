@@ -65,7 +65,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         menuLateral = new JPanel();
         btnProdutos = new JButton();
         btnCarrinho = new JButton();
-        btnClientes = new JButton();
+        btnFuncionarios = new JButton();
         btnRelatorios = new JButton();
         btnSair = new JButton();
         conteudoPrincipal = new JPanel();
@@ -156,7 +156,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btnCarrinho.setText("Carrinho");
         btnCarrinho.addActionListener(this::btnCarrinhoActionPerformed);
 
-        btnClientes.setText("Clientes");
+        btnFuncionarios.setText("Funcionários");
 
         btnRelatorios.setText("Logs");
         btnRelatorios.addActionListener(this::btnRelatoriosActionPerformed);
@@ -170,7 +170,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         menuLateralLayout.setHorizontalGroup(menuLateralLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addComponent(btnProdutos, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnCarrinho, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnClientes, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnFuncionarios, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnRelatorios, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnSair, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -180,7 +180,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCarrinho, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnClientes, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnFuncionarios, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnRelatorios, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
@@ -547,10 +547,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JButton btnAdicionarAoCarrinho;
     private JButton btnAdicionarProduto;
     private JButton btnCarrinho;
-    private JButton btnClientes;
     private JButton btnEditarProduto;
     private JButton btnExcluirProduto;
     private JButton btnFinalizarCompra;
+    private JButton btnFuncionarios;
     private JButton btnLimparRelatorios;
     private JButton btnProdutos;
     private JButton btnRelatorios;
