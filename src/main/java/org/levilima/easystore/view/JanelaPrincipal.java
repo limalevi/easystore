@@ -48,9 +48,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     public JanelaPrincipal() {
         initComponents();
         loja.carregarDados();
+        gerFuncionarios.carregarDados();
         gerRelatorios.carregarRelatorio();
         atualizarTextoRelatorio();
         atualizarTabela();
+        atualizarTabelaFuncionarios();
     }
 
     @SuppressWarnings("unchecked")
