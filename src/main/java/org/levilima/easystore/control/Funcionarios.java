@@ -43,4 +43,8 @@ public class Funcionarios {
         
         return false;
     }
+    
+    public LinkedList<Funcionario> getFuncionario() {
+        return funcionarios;
+    }
 }
