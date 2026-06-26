@@ -111,37 +111,37 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         lblEasyStore.setText("EasyStore");
         lblEasyStore.setVerticalAlignment(SwingConstants.TOP);
 
-        btnAdicionarProduto.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-add-24.png")); // NOI18N
+        btnAdicionarProduto.setIcon(new ImageIcon(getClass().getResource("/img/icons8-add-24.png"))); // NOI18N
         btnAdicionarProduto.setToolTipText("Adicionar um produto");
         btnAdicionarProduto.addActionListener(this::btnAdicionarProdutoActionPerformed);
 
-        btnEditarProduto.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-edit-24.png")); // NOI18N
+        btnEditarProduto.setIcon(new ImageIcon(getClass().getResource("/img/icons8-edit-24.png"))); // NOI18N
         btnEditarProduto.setToolTipText("Editar um produto");
         btnEditarProduto.addActionListener(this::btnEditarProdutoActionPerformed);
 
-        btnExcluirProduto.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-delete-24.png")); // NOI18N
+        btnExcluirProduto.setIcon(new ImageIcon(getClass().getResource("/img/icons8-delete-24.png"))); // NOI18N
         btnExcluirProduto.setToolTipText("Excluir um produto");
         btnExcluirProduto.addActionListener(this::btnExcluirProdutoActionPerformed);
 
         separador1.setOrientation(SwingConstants.VERTICAL);
 
-        btnAdicionarAoCarrinho.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-adicionar-o-carrinho-de-compras-24.png")); // NOI18N
+        btnAdicionarAoCarrinho.setIcon(new ImageIcon(getClass().getResource("/img/icons8-adicionar-o-carrinho-de-compras-24.png"))); // NOI18N
         btnAdicionarAoCarrinho.setToolTipText("Adicionar item ao carrinho");
         btnAdicionarAoCarrinho.addActionListener(this::btnAdicionarAoCarrinhoActionPerformed);
 
-        btnRemoverDoCarrinho.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-return-purchase-24.png")); // NOI18N
+        btnRemoverDoCarrinho.setIcon(new ImageIcon(getClass().getResource("/img/icons8-return-purchase-24.png"))); // NOI18N
         btnRemoverDoCarrinho.setToolTipText("Remover item do carrinho");
         btnRemoverDoCarrinho.addActionListener(this::btnRemoverDoCarrinhoActionPerformed);
 
         separador2.setOrientation(SwingConstants.VERTICAL);
 
-        btnCadastrarFuncionario.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-adicionar-usuário-masculino-24.png")); // NOI18N
+        btnCadastrarFuncionario.setIcon(new ImageIcon(getClass().getResource("/img/icons8-adicionar-usuário-masculino-24.png"))); // NOI18N
         btnCadastrarFuncionario.setToolTipText("Cadastrar um funcionário");
 
-        btnEditarFuncionario.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-editar-usuário-masculino-24.png")); // NOI18N
+        btnEditarFuncionario.setIcon(new ImageIcon(getClass().getResource("/img/icons8-editar-usuário-masculino-24.png"))); // NOI18N
         btnEditarFuncionario.setToolTipText("Editar dados do funcionário");
 
-        btnRemoverFuncionario.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-remover-usuário-masculino-24.png")); // NOI18N
+        btnRemoverFuncionario.setIcon(new ImageIcon(getClass().getResource("/img/icons8-remover-usuário-masculino-24.png"))); // NOI18N
         btnRemoverFuncionario.setToolTipText("Remover funcionário");
 
         GroupLayout menuSuperiorLayout = new GroupLayout(menuSuperior);
