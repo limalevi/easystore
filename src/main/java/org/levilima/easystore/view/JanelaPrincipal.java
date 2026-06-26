@@ -29,7 +29,9 @@ import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
 import org.levilima.easystore.control.Carrinho;
+import org.levilima.easystore.control.Funcionarios;
 import org.levilima.easystore.control.OperacaoVenda;
+import org.levilima.easystore.model.Funcionario;
 import org.levilima.easystore.model.ItemCarrinho;
 
 /**
@@ -40,6 +42,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     
     private Loja loja = new Loja();
     private Carrinho carrinhoDeCompras = new Carrinho();
+    private Funcionarios gerFuncionarios = new Funcionarios();
     public GerenciadorRelatorios gerRelatorios = new GerenciadorRelatorios();
     
     public JanelaPrincipal() {
@@ -586,6 +589,22 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 item.getProduto().getPreco(),
                 item.getQuantidadeSelecionada(),
                 item.getSubTotal()
+            });
+        }
+    }
+    
+    public void atualizarTabelaFuncionarios() {
+        DefaultTableModel tabela = (DefaultTableModel) tabelaFuncionarios.getModel();
+        
+        tabela.setRowCount(0);
+        
+        for(Funcionario funcionario : gerFuncionarios.getFuncionario()) {
+            tabela.addRow(new Object[] {
+                funcionario.getId(),
+                funcionario.getNome(),
+                funcionario.getEmail(),
+                funcionario.getCpf(),
+                funcionario.getTelefone()
             });
         }
     }
