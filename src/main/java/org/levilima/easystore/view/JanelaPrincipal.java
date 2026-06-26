@@ -67,6 +67,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         separador1 = new JSeparator();
         btnAdicionarAoCarrinho = new JButton();
         btnRemoverDoCarrinho = new JButton();
+        separador2 = new JSeparator();
+        btnCadastrarFuncionario = new JButton();
         menuLateral = new JPanel();
         btnProdutos = new JButton();
         btnCarrinho = new JButton();
@@ -129,6 +131,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         btnRemoverDoCarrinho.setToolTipText("Remover item do carrinho");
         btnRemoverDoCarrinho.addActionListener(this::btnRemoverDoCarrinhoActionPerformed);
 
+        separador2.setOrientation(SwingConstants.VERTICAL);
+
+        btnCadastrarFuncionario.setIcon(new ImageIcon("/home/levi/NetBeansProjects/EasyStore/img/icons8-adicionar-usuário-masculino-24.png")); // NOI18N
+        btnCadastrarFuncionario.setToolTipText("Cadastrar um funcionário");
+
         GroupLayout menuSuperiorLayout = new GroupLayout(menuSuperior);
         menuSuperior.setLayout(menuSuperiorLayout);
         menuSuperiorLayout.setHorizontalGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -139,22 +146,33 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnExcluirProduto)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(separador1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addComponent(separador1, GroupLayout.PREFERRED_SIZE, 3, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAdicionarAoCarrinho)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRemoverDoCarrinho)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(separador2, GroupLayout.PREFERRED_SIZE, 3, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCadastrarFuncionario)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         menuSuperiorLayout.setVerticalGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(menuSuperiorLayout.createSequentialGroup()
-                .addGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(separador1, GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAdicionarAoCarrinho)
-                    .addComponent(btnRemoverDoCarrinho, GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAdicionarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEditarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnExcluirProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnCadastrarFuncionario, GroupLayout.Alignment.LEADING)
+                        .addGroup(menuSuperiorLayout.createSequentialGroup()
+                            .addGroup(menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(btnAdicionarAoCarrinho, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnRemoverDoCarrinho, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGap(0, 0, 0))
+                        .addGroup(GroupLayout.Alignment.LEADING, menuSuperiorLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnAdicionarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEditarProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnExcluirProduto, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(separador1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(separador2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -618,6 +636,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private JButton btnAdicionarAoCarrinho;
     private JButton btnAdicionarProduto;
+    private JButton btnCadastrarFuncionario;
     private JButton btnCarrinho;
     private JButton btnEditarProduto;
     private JButton btnExcluirProduto;
@@ -643,6 +662,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JScrollPane scrollPane3;
     private JScrollPane scrollPane4;
     private JSeparator separador1;
+    private JSeparator separador2;
     private JTable tabelaCarrinho;
     private JTable tabelaFuncionarios;
     private JTable tabelaProdutos;
