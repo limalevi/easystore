@@ -27,4 +27,20 @@ public class Funcionarios {
     public boolean removerFuncionario(int id) {
         return funcionarios.removeIf(funcionario -> funcionario.getId() == id);
     }
+    
+    public boolean editarFuncionario(int id, String nome, String email,  int cpf, int telefone) {
+        for(Funcionario funcionario : funcionarios) {
+            if(funcionario.getId() == id) {
+                funcionario.setId(id);
+                funcionario.setNome(nome);
+                funcionario.setEmail(email);
+                funcionario.setCpf(cpf);
+                funcionario.setTelefone(telefone);
+                
+                return true;
+            }
+        }
+        
+        return false;
+    }
 }
