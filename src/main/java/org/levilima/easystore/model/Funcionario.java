@@ -12,7 +12,7 @@ public class Funcionario implements Serializable {
     private String nome, email;
     private int id = 1, cpf, telefone;
     
-    public Funcionario(int id, String nome, String email,  int cpf, int telefone) {
+    public Funcionario(String nome, String email,  int cpf, int telefone) {
         setId(Funcionarios.ID);
         setNome(nome);
         setEmail(email);
