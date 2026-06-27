@@ -9,10 +9,10 @@ import org.levilima.easystore.control.Funcionarios;
 */
 public class Funcionario implements Serializable {
     private static final long serialVersionUID = 1L;
-    private String nome, email;
-    private int id = 1, cpf, telefone;
+    private String nome, email, cpf, telefone;
+    private int id = 1;
     
-    public Funcionario(String nome, String email,  int cpf, int telefone) {
+    public Funcionario(String nome, String email,  String cpf, String telefone) {
         setId(Funcionarios.ID);
         setNome(nome);
         setEmail(email);
@@ -33,11 +33,11 @@ public class Funcionario implements Serializable {
         this.id = id;
     }
     
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
     
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -53,11 +53,11 @@ public class Funcionario implements Serializable {
         return id;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 }

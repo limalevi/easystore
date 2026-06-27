@@ -162,28 +162,43 @@ public class JanelaEdicaoFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnEditarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        try {
-            String nome = txtNome.getText();
-            String email = txtEmail.getText();
-            int cpf = Integer.parseInt(txtCpf.getText());
-            int telefone = Integer.parseInt(txtTelefone.getText());
-            
-            boolean sucesso = gerFuncionarios.editarFuncionario(funcionarioAlvo.getId(), nome, email, cpf, telefone);
-            
-            if(sucesso) {
-                JOptionPane.showMessageDialog(this, "Dados do funcionário editado com sucesso!");
-                gerFuncionarios.salvarDados();
-                janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoEdicaoFuncionario(funcionarioAlvo.getId()));
-                janelaPrincipal.gerRelatorios.salvarRelatorio();
-                janelaPrincipal.atualizarTextoRelatorio();
-                janelaPrincipal.atualizarTabelaFuncionarios();
-                dispose();
-            } else {
-                JOptionPane.showMessageDialog(this, "Erro: Funcionário não encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
-            }
-        } catch(NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Erro: Insira valores válidos para o cpf e o Nº de telefone!", "Erro de formatação", JOptionPane.ERROR_MESSAGE);
+        String nome = txtNome.getText();
+        String email = txtEmail.getText();
+        String cpf = txtCpf.getText();
+        String telefone = txtTelefone.getText();
+        
+        if(nome.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O nome não pode ficar vazio!");
             return;
+        }
+        
+        if(email.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O E-Mail não pode ficar vazio!");
+            return;
+        }
+        
+        if(cpf.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O CPF não pode ficar vazio!");
+            return;
+        }
+        
+        if(telefone.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O Nº de telefone não pode ficar vazio!");
+            return;
+        }
+
+        boolean sucesso = gerFuncionarios.editarFuncionario(funcionarioAlvo.getId(), nome, email, cpf, telefone);
+
+        if(sucesso) {
+            JOptionPane.showMessageDialog(this, "Dados do funcionário editado com sucesso!");
+            gerFuncionarios.salvarDados();
+            janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoEdicaoFuncionario(funcionarioAlvo.getId()));
+            janelaPrincipal.gerRelatorios.salvarRelatorio();
+            janelaPrincipal.atualizarTextoRelatorio();
+            janelaPrincipal.atualizarTabelaFuncionarios();
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro: Funcionário não encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
         
         dispose();

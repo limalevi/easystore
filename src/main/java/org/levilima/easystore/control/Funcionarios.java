@@ -1,7 +1,6 @@
 package org.levilima.easystore.control;
 
 import java.util.LinkedList;
-import java.io.Serializable;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -28,7 +27,7 @@ public class Funcionarios {
         return funcionarios.removeIf(funcionario -> funcionario.getId() == id);
     }
     
-    public boolean editarFuncionario(int id, String nome, String email,  int cpf, int telefone) {
+    public boolean editarFuncionario(int id, String nome, String email,  String cpf, String telefone) {
         for(Funcionario funcionario : funcionarios) {
             if(funcionario.getId() == id) {
                 funcionario.setId(id);

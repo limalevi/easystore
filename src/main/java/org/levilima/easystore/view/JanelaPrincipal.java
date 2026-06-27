@@ -338,7 +338,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                Integer.class, String.class, String.class, Integer.class, Integer.class
+                Integer.class, String.class, String.class, String.class, String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false

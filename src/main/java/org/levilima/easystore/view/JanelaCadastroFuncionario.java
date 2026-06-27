@@ -162,7 +162,8 @@ public class JanelaCadastroFuncionario extends javax.swing.JFrame {
     private void btnCadastrarActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         String nome = txtNome.getText();
         String email = txtEmail.getText();
-        int cpf, telefone;
+        String cpf = txtCpf.getText();
+        String telefone = txtTelefone.getText();
         
         if(nome.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Insira o nome do funcionário!");
@@ -174,16 +175,12 @@ public class JanelaCadastroFuncionario extends javax.swing.JFrame {
             return;
         }
         
-        try {
-            cpf = Integer.parseInt(txtCpf.getText());
-        } catch(NumberFormatException e) {
+        if(cpf.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Insira o CPF do funcionário!");
             return;
         }
-
-        try {
-            telefone = Integer.parseInt(txtTelefone.getText());
-        } catch(NumberFormatException e) {
+        
+        if(telefone.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Insira o Nº de telefone do funcionário!");
             return;
         }
