@@ -12,9 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
 import org.levilima.easystore.control.Funcionarios;
-import org.levilima.easystore.control.Loja;
-import org.levilima.easystore.model.Produto;
-import org.levilima.easystore.control.OperacaoEdicao;
+import org.levilima.easystore.control.OperacaoEdicaoFuncionario;
 import org.levilima.easystore.model.Funcionario;
 
 /**
@@ -175,9 +173,9 @@ public class JanelaEdicaoFuncionario extends javax.swing.JFrame {
             if(sucesso) {
                 JOptionPane.showMessageDialog(this, "Dados do funcionário editado com sucesso!");
                 gerFuncionarios.salvarDados();
-                //janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoEdicao(produtoAlvo.getCodigo()));
-                //janelaPrincipal.gerRelatorios.salvarRelatorio();
-                //janelaPrincipal.atualizarTextoRelatorio();
+                janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoEdicaoFuncionario(funcionarioAlvo.getId()));
+                janelaPrincipal.gerRelatorios.salvarRelatorio();
+                janelaPrincipal.atualizarTextoRelatorio();
                 janelaPrincipal.atualizarTabelaFuncionarios();
                 dispose();
             } else {

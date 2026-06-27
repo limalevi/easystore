@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
 import org.levilima.easystore.control.Funcionarios;
+import org.levilima.easystore.control.OperacaoCadastroFuncionario;
 import org.levilima.easystore.model.Funcionario;
 
 public class JanelaCadastroFuncionario extends javax.swing.JFrame {
@@ -191,9 +192,9 @@ public class JanelaCadastroFuncionario extends javax.swing.JFrame {
         
         gerFuncionarios.addFuncionario(funcionario);
         gerFuncionarios.salvarDados();
-        //janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoAdicao(produto.getNome(), produto.getQuantidade()));
-        //janelaPrincipal.gerRelatorios.salvarRelatorio();
-        //janelaPrincipal.atualizarTextoRelatorio();
+        janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoCadastroFuncionario(funcionario.getNome()));
+        janelaPrincipal.gerRelatorios.salvarRelatorio();
+        janelaPrincipal.atualizarTextoRelatorio();
         janelaPrincipal.atualizarTabelaFuncionarios();
         dispose();
     }//GEN-LAST:event_btnCadastrarActionPerformed

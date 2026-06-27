@@ -1,3 +1,5 @@
 target
 *.dat
 relatorio.txt
+nb-configuration.xml
+nbactions.xml

@@ -13,6 +13,7 @@ import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import org.levilima.easystore.control.Funcionarios;
 import org.levilima.easystore.model.Funcionario;
+import org.levilima.easystore.control.OperacaoRemocaoFuncionario;
 
 /**
  *
@@ -104,9 +105,9 @@ public class JanelaRemocaoFuncionario extends javax.swing.JFrame {
         if(sucesso) {
             JOptionPane.showMessageDialog(this, "Funcionário removido com sucesso!");
             gerFuncionarios.salvarDados();
-            //janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoRemocao(produtoAlvo.getNome()));
-            //janelaPrincipal.gerRelatorios.salvarRelatorio();
-            //janelaPrincipal.atualizarTextoRelatorio();
+            janelaPrincipal.gerRelatorios.registrarOperacao(new OperacaoRemocaoFuncionario(funcionarioAlvo.getNome()));
+            janelaPrincipal.gerRelatorios.salvarRelatorio();
+            janelaPrincipal.atualizarTextoRelatorio();
             janelaPrincipal.atualizarTabelaFuncionarios();
             dispose();
         } else {
